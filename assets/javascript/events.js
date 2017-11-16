@@ -68,9 +68,9 @@ function createEventDiv(event){
                      event.imgSrc+
                      "'alt='"+
                      "'></a></div><div><span class='title'>"+
-                     "<h4>" +
+                     "<h3>" +
                      event.title+
-                     "</h4></span>"+
+                     "</h3></span>"+
                      "<a class='link' href='#' onclick='displayAddressOnMap(this);return false;' data-info='"+
                      event.venue_address+
                      "'>"+
