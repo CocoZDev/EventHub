@@ -12,7 +12,7 @@ function dayAndNight(){
     }
     else{
       //Night
-        document.body.style.backgroundImage = "url('assets/images/night.jpg')";
+      document.body.style.backgroundImage = "url('assets/images/night.jpg')";
     }
 }
 dayAndNight();//======background change end code
@@ -24,6 +24,7 @@ var callBackResponse = "";
 var userInput;
 
 $('#displayPanel').hide();
+$('.hidden').hide();
 
 $("#submit-id").click(function(){
   event.preventDefault();
@@ -31,6 +32,7 @@ $("#submit-id").click(function(){
   getWeather(); //GETS WEATHER FOR THE SEARCH CITY
   getEventsToUI('music'); //DEFAULT CITY SEARCH WOULD DISPLAY MUSIC EVENTS
   displayOnMap(userInput); //DISPLAY THE SELECTED CITY ON THE MAP
+  $('.hidden').show();
 });
 
 //using weather api key getting weather details

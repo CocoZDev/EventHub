@@ -12,6 +12,11 @@ body{
 	/*height:100%;*/
 	min-height: 400px;
 	padding: 80px 0px;
+
+	/* Fixed Background Image */
+	/* background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;  */
 }
 
 input{
@@ -24,6 +29,10 @@ input{
 	background-color: #128AAE;
 	border: none;
 }
+
+/* hidden {
+	display: none; 
+} */
 
 #search-result {
 	width: 90%;
