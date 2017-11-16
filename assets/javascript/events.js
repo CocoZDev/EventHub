@@ -1,7 +1,7 @@
 // Default API Setting
 var eventType = "music";
 var address;
-var dateRange = "2017080100-2017103000";
+var dateRange = "future";
 var noOfRecords = 20;
 
 //CREATE AN EVENT OBJECT TO CAPTURE THE  EVENT RELATED INFORMAION
@@ -29,9 +29,10 @@ function queryEvents(eventType, address, noOfRecords, dateRange)
       app_key: "Gp5KnQs4HTZ9gpPJ", //APP KEY FOR USING "EVENTFUL" API
       q: eventType, //SEARCH ON THE TYPE OF EVENT e.g, MUSIC, FAMILY, BUSINESS
       where: address, //THIS COULD BE CITY NAME OR ADDRESS
-      "date": dateRange, //"2017080100-2017103000"
+      "date": dateRange, //"2017080100-2017103000" or "THIS-MONTH" or "FUTURE"
       page_size: noOfRecords, //NO. OF RECORDS TO FETCH FROM THE QUERY
       sort_order: "popularity", //SORTING RELEVANCE
+      within: "15", // WITHIN 20 MILES
    };
 
    EVDB.API.call("/events/search", oArgs, function(oData) {
@@ -41,7 +42,7 @@ function queryEvents(eventType, address, noOfRecords, dateRange)
          event.title = oData.events.event[i].title;
          event.description = oData.events.event[i].description;
          event.url = oData.events.event[i].url;
-         if(oData.events.event[i].image !== null){
+         if(oData.events.event[i].image.medium.url !== null){
             event.imgSrc = oData.events.event[i].image.medium.url;
          }
          event.city = oData.events.event[i].city_name;

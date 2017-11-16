@@ -75,7 +75,7 @@ $("#submit-id").click(function(){
         }).done(function(response) {
           console.log(response);
         //appends the country name to the html
-        $('.localTime').html(moment(response.formatted).format("hh:mm A") + ' - ');
+        $('.localTime').html(moment(response.formatted).format("hh:mm A") + ' (Local Time) - ');
         });
 
         cbHandler(response);
