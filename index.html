@@ -20,19 +20,17 @@
 		<div class="container container-fluid">
 			<div class="row">
 				<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-			<!-- <div class="navbar-heading text-left"> -->
 				<h2>Event Hub</h2>
 				<span id="clock"></span>
 				</div>
 				<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 				<h4 style="font-style: italic;">Discover events that match your interests!</h4>
-			<!-- </div> -->
 				</div>
 			</div>
 		</div>
 	</nav>
 
-<!-- 	<article> -->
+
 	<div class="container container-fluid">
 		<div class="row" id="stackContainer">
 				<div id="stack">
@@ -50,7 +48,7 @@
 							</form>
 					</figure>
 
-					<figure class="hidden">
+					<figure class="hidden" id="weather-container">
 						<div>
 							<span id="wea-de" class="localTime"></span><span class="temp" id="wea-de"><p>Local Weather</p></span>
 						</div>
@@ -61,7 +59,7 @@
 						</ul>
 					</figure>
 
-					<figure class="hidden">
+					<figure class="hidden" id="event-type-container">
 						<div class="event-type"><p>Choose Event Type</p></div>
 					<ul class="two">
 						<li><input type="button"  id="btnGetMusicEvents" onclick="getEventsToUI('music')" value="Music" /></li>
@@ -73,16 +71,16 @@
 			</div>
 		</div>
 	</div>
-	<!-- </article> -->
+
  <!-- Display Section of Events -->
 <div class="container container-fluid">
  <div id="displayRow" class="row">
-	<div id="eventsDisplay" class="col-xs-12 col-sm-7 col-md-7 col-lg-7 col-xl-8"></div>
-	<div id="mapDisplay" class="col-xs-12 col-sm-5 col-md-5 col-lg-5 col-xl-4"></div>
+	<div id="eventsDisplay" class="col-xs-12 col-sm-7 col-md-7 col-lg-7 col-xl-7"></div>
+	<div id="mapDisplay" class="col-xs-12 col-sm-5 col-md-5 col-lg-5 col-xl-5"></div>
  </div>
 </div>
 <nav id="footer" class="navbar navbar-default navbar-fixed-bottom">
-	<div style="font-style:">
+	<div>
 	  	<p>This website was developed with <span style="font-size:200%;color:red;">&hearts;</span> by Brian Hart, Prathibha Chunchu, Guiyu Zhao, Michael Osgood, and Michael Lazear.
 		</p>
 		<p><a href="https://github.com/Zoey007/EventHub" target="_blank"> Visit GitHub Repo <span class="fa fa-lg fa-github"></span></a>

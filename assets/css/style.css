@@ -30,9 +30,9 @@ input{
 	border: none;
 }
 
-/* hidden {
+hidden {
 	display: none; 
-} */
+}
 
 #search-result {
 	width: 90%;
@@ -54,9 +54,10 @@ input{
 	line-height: 1.4em;
 	border: 2px solid white;
 	border-radius: 10px;
-  background-color:  #006AAB;
-  margin-top: 15px;
-  width: 85%;
+	background-color:  #006AAB;
+	margin-top: 15px;
+	width: 85%;
+	padding: 20px;
 }
 
 #eventsDisplay{
@@ -71,10 +72,12 @@ input{
 }
 
 #mapDisplay{
-	height: 400px;
-	width: 40%;
 	display: none;
-	margin-top: 30px;
+	position: absolute;
+	top: 35%;
+	height: 300px;
+	width: 300px;
+	/* margin-top: -50px; account for padding and border if not using box-sizing: border-box; */
 }
 
 /* Style the tab */

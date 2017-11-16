@@ -1,8 +1,8 @@
-
+// Default API Setting
 var eventType = "music";
 var address;
 var dateRange = "2017080100-2017103000";
-var noOfRecords = 10;
+var noOfRecords = 20;
 
 //CREATE AN EVENT OBJECT TO CAPTURE THE  EVENT RELATED INFORMAION
 
