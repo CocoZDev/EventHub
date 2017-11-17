@@ -1,4 +1,4 @@
-# EventHub
+# Event Hub
 
 This is a local event search app designed with Bootstrap, APIs, HTML, CSS, Javascript, jQuery, and MomentJS. It will also show users the local time, weather, and a map at the event location, so that users can easily plan for the events.
 
