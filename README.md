@@ -1,6 +1,10 @@
 # Event Hub
 
-This is a local event search app designed with Bootstrap, APIs, HTML, CSS, Javascript, jQuery, and MomentJS. It will also show users the local time, weather, and a map at the event location, so that users can easily plan for the events.
+This group project is a location-based event search engine. It will also show users the local time, weather, event location map, and link to purchase tickets for users to easily plan and attend events of their interests.
+
+I was responsible for researching and implementing the event API and also assisted in the front end development.
+
+Technologies Used: Bootstrap, APIs, HTML, CSS, Javascript, jQuery, Moment.js, and Photoshop
 
 # API Used
 
@@ -10,7 +14,7 @@ This is a local event search app designed with Bootstrap, APIs, HTML, CSS, Javas
 - TimeZoneDB API: to display time
 
 
-# Heroku
+# Live Demo
 
 This functional application can be accessed on Heroku at https://event-hub-api.herokuapp.com/.
 
