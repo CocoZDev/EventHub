@@ -20,4 +20,4 @@ This functional application can be accessed on Heroku at https://event-hub-api.h
 
 # Team
 
-This app was developed by Guiyu Zhao (me), Brian Hart, Prathibha Chunchu, Michael Osgood, and Michael Lazear.
+This app was developed by Guiyu Zhao (me), Brian Hart, Prathibha Chunchu, Michael Osgood, and Michael Lazear. The original group Github link is https://github.com/Brian-T-Hart/chartreuse_project.
