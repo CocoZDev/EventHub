@@ -1,158 +1,154 @@
-*{
-	box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-html {
-	height: 100%;
+/* Makes the sample page fill the window */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-body{
-	background-image: url("../images/sunrise.jpg");
-	background-size:cover;
-	/*height:100%;*/
-	min-height: 400px;
-	padding: 80px 0px;
+body {
+  background-image: url("../images/sunrise.jpg");
+  background-size: cover;
+  /*height:100%;*/
+  min-height: 400px;
+  padding: 80px 0px;
 
-	/* Fixed Background Image */
-	/* background-repeat: no-repeat;
+  /* Fixed Background Image */
+  /* background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;  */
 }
 
-input{
-	text-decoration: none;
-	font-family: 'lato', sans-serif;
-	line-height: 1.2em;
-	letter-spacing: .0166em;
-	font-size: 15px;
-	color: #fff;
-	background-color: #128AAE;
-	border: none;
+.tagline, .your-time {
+	margin-top: 10px;
+	text-align: center;
+	font-size: 18px;
 }
 
-hidden {
-	display: none; 
+input {
+  text-decoration: none;
+  font-family: "lato", sans-serif;
+  line-height: 1.2em;
+  letter-spacing: 0.0166em;
+  font-size: 15px;
+  color: #fff;
+  background-color: #128aae;
+  border: none;
+}
+
+.hidden {
+  display: none;
 }
 
 #search-result {
-	width: 90%;
-	display: block;
-	margin: auto;
-	margin-top: 10px;
+  width: 90%;
+  display: block;
+  margin: auto;
+  margin-top: 10px;
 }
 
-#eventImage{
-	float:left;
-	/* padding: 5px; */
-	margin-right: 20px;
+#eventImage {
+  float: left;
+  /* padding: 5px; */
+  margin-right: 20px;
 }
 
 .eventList {
-	color:white;
-	display: block;
-	margin: auto;
-	line-height: 1.4em;
-	border: 2px solid white;
-	border-radius: 10px;
-	background-color:  #006AAB;
-	margin-top: 15px;
-	width: 85%;
-	padding: 20px;
+  color: white;
+  display: block;
+  margin: auto;
+  line-height: 1.4em;
+  border: 2px solid white;
+  border-radius: 10px;
+  background-color: #006aab;
+  margin-top: 15px;
+  width: 85%;
+  padding: 20px;
 }
 
-#eventsDisplay{
-	font-family: 'lato', sans-serif;
-	margin-top: 15px;
+#eventsDisplay {
+  font-family: "lato", sans-serif;
+  margin-top: 15px;
 }
 
-.link{
-	color:yellow;
-	text-decoration: underline;
-	font-style: italic;
+.link {
+  color: yellow;
+  text-decoration: underline;
+  font-style: italic;
 }
 
-#mapDisplay{
-	display: none;
-	position: absolute;
-	top: 35%;
-	height: 300px;
-	width: 300px;
+#mapDisplay {
+  display: none;
+  position: absolute;
+  top: 35%;
+  height: 300px;
+  width: 300px;
 }
 
 /* Style the tab */
 div.tab {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color:  #006AAB ;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #006aab;
 }
 
 /* Style the buttons inside the tab */
 div.tab button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
 }
 
 /* Change background color of buttons on hover */
 div.tab button:hover {
-    background-color: #128AAE ;
+  background-color: #128aae;
 }
 
 /* Create an active/current tablink class */
 div.tab button.active {
-    background-color:  #128AAE;
+  background-color: #128aae;
 }
 
-.tablinks, #displayInfo{
-	color:#fff;
-	font-family: 'lato', sans-serif;
-	line-height: 2em;
-	letter-spacing: .0166em;
-	font-size: 15px;
+.tablinks,
+#displayInfo {
+  color: #fff;
+  font-family: "lato", sans-serif;
+  line-height: 2em;
+  letter-spacing: 0.0166em;
+  font-size: 15px;
 }
 
 /* Style the tab content */
 .tabcontent {
-    display: none;
-    padding: 6px 12px;
-    font-family: 'lato', sans-serif;
+  display: none;
+  padding: 6px 12px;
+  font-family: "lato", sans-serif;
 }
 
 /*div box styling which contains local weather , Travel sites, and events*/
-#stackContainer {
-	width: 310px;
-	display: block;
-	margin: auto;
-	margin-top: 35px;
+
+#stack {
+  font-size: 1.2em;
+  text-align: center;
+  display: block;
+  margin: auto;
+  font-family: Montserrat, Tahoma, Arial, sans-serif;
 }
 
-#stack{
-	perspective: 1800px;
-	perspective-origin: 50% 50%;
-	font-size: 1.2em;
-	text-align: center;
-	display: block;
-	margin: auto;
-	font-family: Montserrat, Tahoma, Arial, sans-serif;
-	overflow-x:hidden;
-	overflow-x: visible;
+h2 {
+  margin-top: 0;
 }
 
-p{
-	text-align: center;
-	font-size: 10px;
-	margin-top: 10px;
-}
-
-h2{
-	margin-top: 0;
-}
-
-#stack figure{
+/* Old Search Bar with Rotating Animation */
+/* #stack figure{
 	margin:0 1em;
 	height: 5ch;
 	width:16em;
@@ -231,128 +227,143 @@ a:hover{
 }
 #stack ul.two li{
 	width:31.5%;
+} */
+
+/* End of Old Search Bar with Rotating Animation */
+
+/* New Search Area */
+#stack {
+  height: auto;
+  /* width: 40%;
+  margin-left: 30%; */
+  margin-top: 50px;
+  position: absolute;
+  color: #fff;
+  font-weight: 500;
+  background-color: black;
+  border: 2px solid #006aab;
+  border-radius: 5px;
+  height: 200px;
 }
 
-#search-bar{
-	width:150px;
-	position: absolute;
-	top:5px;
-	left:50px;
+#search-bar {
+  width: 150px;
+  position: absolute;
+  top: 5px;
+  left: 50px;
 }
 
-.btn{
-	position: absolute;
-	top:5px;
-	left:205px;
-    color: #3596e0;
+.btn-default {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  color: #3596e0;
 }
+
+.btn-primary {
+  background-color: #006aab;
+}
+
+#stack .search-heading {
+  text-align: left;
+  padding: 10px 20px;
+  height: 40px;
+  width: 100%;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  border: 2px solid yellow;
+}
+
+/* End of New Search Area */
 
 /*Heading and Footer*/
-.navbar{
-	background-color: #0B071A;
+.navbar {
+  background-color: #0b071a;
+  color: white;
+}
+
+nav, #footer {
+  font-family: "lato", sans-serif;
+  line-height: 1.2em;
+  padding: 8px 8px 8px 8px;
+  text-align: center;
+}
+
+#footer a {
 	color: white;
 }
 
-nav {
-	font-family: 'lato', sans-serif;
-	line-height: 1.2em;
-	padding:8px 8px 8px 8px;
-	text-align: center;
+.social-icon {
+  display: inline-block;
+  margin: 0px 5px;
 }
 
-.social-icon{
-	display: inline-block;
-	margin:0px 5px;
+#socialiconImg {
+  width: 30px;
+  height: 30px;
+  background: none;
 }
 
-#socialiconImg{
-	width:30px;
-	height:30px;
-	background: none;
-}
-
-li{
-	display: inline-block;
+li {
+  display: inline-block;
 }
 
 @media only screen and (max-width: 1680px) {
-
-	#mapDisplay{
-		height: 300px;
-		max-width: 300px;
-		margin: 10%;
-		margin-top: 15px;
-		position: fixed !important;
-		bottom: -35px !important;
-		right: -50px !important;
-	}
+  #mapDisplay {
+    height: 300px;
+    max-width: 300px;
+    margin: 10%;
+    margin-top: 15px;
+    position: fixed !important;
+    bottom: -35px !important;
+    right: -50px !important;
+  }
 }
 
 @media only screen and (max-width: 1280) {
-
-	#mapDisplay{
-		height: 300px;
-		max-width: 300px;
-		margin: 10%;
-		margin-top: 15px;
-		position: fixed !important;
-		bottom: 100px !important;
-		right: 40px !important;
-	}
+  #mapDisplay {
+    height: 300px;
+    max-width: 300px;
+    margin: 10%;
+    margin-top: 15px;
+    position: fixed !important;
+    bottom: 100px !important;
+    right: 40px !important;
+  }
 }
 
 @media only screen and (max-width: 980px) {
-
-	#mapDisplay{
-		height: 300px;
-		max-width: 200%;
-		margin: 10%;
-		margin-top: 15px;
-		position: fixed !important;
-		bottom: 100px !important;
-		right: -30px !important;
-
-	}
-	h4{
-		font-size: 12px;
-		margin-bottom: 0px;
-	}
-	#clock {
-		font-size: 12px;
-	}
+  #mapDisplay {
+    height: 300px;
+    max-width: 200%;
+    margin: 10%;
+    margin-top: 15px;
+    position: fixed !important;
+    bottom: 100px !important;
+    right: -30px !important;
+  }
 }
 
 @media only screen and (max-width: 768px) {
-	#mapDisplay{
-		height: 300px;
-		width: 80%;
-		margin: 10%;
-		margin-top: 15px;
-		position: relative !important;
-		bottom: 0px !important;
-		left: 0px !important;
-	}
-	h2{
-		font-size: 12px;
-	}
+  #mapDisplay {
+    height: 300px;
+    width: 80%;
+    margin: 10%;
+    margin-top: 15px;
+    position: relative !important;
+    bottom: 0px !important;
+    left: 0px !important;
+  }
 
-	h4{
-		font-size: 8px;
-	}
+  #eventImage {
+    width: 40%;
+    float: right;
+    border-width: 0.5px;
+    margin-right: 0px;
+  }
 
-	nav{
-		font-size: 8px;
-	}
-
-  #eventImage{
-	width: 40%;
-	float: right;
-	border-width: 0.5px;
-	margin-right: 0px;
-	}
-
-	#eventsDisplay{
+  #eventsDisplay {
     width: 100%;
-		margin: 0px;
-    }
+    margin: 0px;
+  }
 }

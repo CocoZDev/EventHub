@@ -21,7 +21,8 @@ dayAndNight();//======background change end code
 var APIKey = "5e68d3fec5ccfb64ad77db9dcbc833c7";
 var search = "";
 var callBackResponse = "";
-var userInput;
+var userInput = $('#search-bar').val();
+var input = document.getElementById("search-bar");
 
 $('#displayPanel').hide();
 
@@ -29,7 +30,7 @@ $('#displayPanel').hide();
 $("#submit-id").click(function(){
   // Cancel the default action, if needed
   event.preventDefault();
-  userInput = $('#search-bar').val();
+  console.log('User Input Captured: ' + userInput);
   getWeather(); //GETS WEATHER FOR THE SEARCH CITY
   getEventsToUI('music'); //DEFAULT CITY SEARCH WOULD DISPLAY MUSIC EVENTS
   displayOnMap(userInput); //DISPLAY THE SELECTED CITY ON THE MAP
@@ -44,6 +45,7 @@ input.addEventListener("keyup", function(event) {
   // Number 13 is the "Enter" key on the keyboard
   if (event.keyCode === 13) {
     // Trigger the button element with a click
+    console.log('input Captured: ' + input);
     document.getElementById("submit-id").click();
   }
 });

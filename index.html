@@ -17,60 +17,105 @@
 <body onload="autocomplete()">
 
 	<nav class="navbar navbar-default navbar-fixed-top">
-		<div class="container container-fluid">
+		<div class="container">
 			<div class="row">
-				<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-				<h2>Event Hub</h2>
-				<span id="clock"></span>
+				<div class="col-sm-4 col-xs-12">
+					<h2 class="nav-brand">Event Hub</h2>
 				</div>
-				<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-				<p style="font-style: italic;">Discover events that match your interests!</p>
+				<div class="col-sm-4 col-xs-12 tagline">
+					<p><em>Discover events that match your interests!</em></p>
+				</div>
+				<div class="col-sm-4 col-xs-12 your-time">
+					<p>
+						Your Time: 
+						<span id="clock"></span> 
+					</p>
 				</div>
 			</div>
 		</div>
 	</nav>
 
+	<div class="container" id="stack">
 
-	<div class="container container-fluid">
-		<div class="row" id="stackContainer">
-				<div id="stack">
-					<figure>
-						<div>
-							<form>
-								<span class="city" id="wea-de">Search City Name</span>
-								<span class="country" id="wea-de"></span>
-						</div>
-							<ul class="two">
-								<li><input type="text" name="location" class="form-control" placeholder="City" id="search-bar" />
-								<li><button class="btn btn-default" type="submit" id="submit-id"><i class="glyphicon glyphicon-search"></i></button></li>
-								</li>
-							</ul>
-							</form>
-					</figure>
+		<!-- City Name Input Heading -->
+		<div class="row">
+			<div class="col-xs-6">
+				<div class="city search-heading">Step 1: Type In City Name</div>
+			</div>
+			<div class="col-xs-6">
+				<input type="text" name="location" class="form-control" placeholder="City" id="search-bar" />
+				<button class="btn btn-default" type="submit" id="submit-id"><i class="glyphicon glyphicon-search"></i></button>
+			</div>
+		</div>
 
-					<figure class="hidden" id="weather-container">
-						<div>
-							<span id="wea-de" class="localTime"></span><span class="temp" id="wea-de"><p>Local Weather</p></span>
-						</div>
-						<ul class="two">
-							<li class="sunrise"></li>
-							<li class="humidity"></li>
-							<li class="sunset"></li>
-						</ul>
-					</figure>
-
-					<figure class="hidden" id="event-type-container">
-						<div class="event-type"><p>Choose Event Type</p></div>
-					<ul class="two">
-						<li><input type="button"  id="btnGetMusicEvents" onclick="getEventsToUI('music')" value="Music" /></li>
-						<li><input type="button" id="btnGetBusinessEvents" onclick="getEventsToUI('business')" value="Business"/></li>
-						<li><input type="button" id="btnGetFamilyEvents" onclick="getEventsToUI('family')" value="Family"/></li>
-					</ul>
-					</figure>
-				</div>
+		<!-- Event Type Heading -->
+		<div class="row" id="event-type-container">
+			<div class="col-xs-6 event-type search-heading">Step 2: Choose Event Type</div>
+			<div class="col-xs-6">
+				<ul class="two">
+					<li><input type="button"  class="btn btn-primary" id="btnGetMusicEvents" onclick="getEventsToUI('music')" value="Music" /></li>
+					<li><input type="button" class="btn btn-primary" id="btnGetBusinessEvents" onclick="getEventsToUI('business')" value="Business"/></li>
+					<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('family')" value="Family"/></li>
+				</ul>
+			</div>
+		</div>
+		
+		<!-- Weather Heading -->
+		<div class="row">
+			<div class="col-xs-6">
+				<div class="localTime"></div>
+				<div class="temp search-heading">Local Weather</div>
+			</div>
+			<div class="col-xs-6">
+				<ul class="two">
+					<li class="sunrise"></li>
+					<li class="humidity"></li>
+					<li class="sunset"></li>
+				</ul>
 			</div>
 		</div>
 	</div>
+
+	<!-- Original Code -->
+	<!-- <div class="container container-fluid">
+		<div class="row" id="stackContainer">
+			<div id="stack">
+				<figure>
+					<div>
+						<form>
+							<span class="city" id="wea-de">Search City Name</span>
+							<span class="country" id="wea-de"></span>
+					</div>
+						<ul class="two">
+							<li><input type="text" name="location" class="form-control" placeholder="City" id="search-bar" />
+							<li><button class="btn btn-default" type="submit" id="submit-id"><i class="glyphicon glyphicon-search"></i></button></li>
+							</li>
+						</ul>
+						</form>
+				</figure>
+
+				<figure id="weather-container">
+					<div>
+						<span id="wea-de" class="localTime"></span><span class="temp" id="wea-de"><p>Local Weather</p></span>
+					</div>
+					<ul class="two">
+						<li class="sunrise"></li>
+						<li class="humidity"></li>
+						<li class="sunset"></li>
+					</ul>
+				</figure>
+
+				<figure id="event-type-container">
+					<div class="event-type"><p>Choose Event Type</p></div>
+				<ul class="two">
+					<li><input type="button"  id="btnGetMusicEvents" onclick="getEventsToUI('music')" value="Music" /></li>
+					<li><input type="button" id="btnGetBusinessEvents" onclick="getEventsToUI('business')" value="Business"/></li>
+					<li><input type="button" id="btnGetFamilyEvents" onclick="getEventsToUI('family')" value="Family"/></li>
+				</ul>
+				</figure>
+			</div>
+		</div>
+	</div> -->
 
 <!-- Google API Test Area -->
 <!-- <div class="container container-fluid">
@@ -89,15 +134,18 @@
 	<div id="mapDisplay" class="col-xs-12 col-sm-5 col-md-5 col-lg-5 col-xl-5"></div>
  </div>
 </div>
-<nav id="footer" class="navbar navbar-default navbar-fixed-bottom">
-	<div>
-		<p>© 2017 Event Hub. All rights reservered.</p>
-	  	<p>Developed with <span style="font-size:200%;color:red;">&hearts;</span> by Brian Hart, Prathibha Chunchu, Guiyu Zhao, Michael Osgood, and Michael Lazear.
-		</p>
-		<p><a href="https://github.com/Zoey007/EventHub" target="_blank"> Visit GitHub Repo <span class="fa fa-lg fa-github"></span></a>
-		</p>	
+
+<footer>
+	<div id="footer" class="navbar navbar-default navbar-fixed-bottom">
+		<div>
+			<p>© 2017 Event Hub. All rights reservered.</p>
+			<p>Developed with <span style="font-size:200%;color:red;">&hearts;</span> by Brian Hart, Prathibha Chunchu, Guiyu Zhao, Michael Osgood, and Michael Lazear.
+			</p>
+			<p><a href="https://github.com/Zoey007/EventHub" target="_blank"> Visit GitHub Repo &nbsp; <span class="fa fa-lg fa-github"></span></a>
+			</p>	
+		</div>
 	</div>
-</nav>
+</footer>
 
 	<!-- <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -116,6 +164,8 @@
 	<!-- GOOGLE MAPS API -->
 	<script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXBAzbg8b6KLfa_Tudom17EDflmOaKleI&callback=initMap&libraries=places">
-    </script>
+	</script>
+	<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXBAzbg8b6KLfa_Tudom17EDflmOaKleI&callback=initMap"
+    async defer></script> -->
 </body>
 </html>
