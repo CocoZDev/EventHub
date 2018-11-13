@@ -10,33 +10,79 @@ body {
   padding: 0;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
-  background-image: url("../images/sunrise.jpg");
+  background-image: url("../images/sunrise_org.jpg");
   background-size: cover;
   /*height:100%;*/
   min-height: 400px;
   padding: 80px 0px;
 
   /* Fixed Background Image */
-  /* background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;  */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
-.tagline, .your-time {
-	margin-top: 10px;
-	text-align: center;
-	font-size: 18px;
+/*Heading and Footer*/
+.navbar {
+  background-color: #0b071a;
+  color: white;
+  border: none;
+  border-bottom: 1px solid #00d4fa;
 }
+
+p {
+  font-size: 17px;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border: none;
+  border-top: 1px solid #00d4fa;
+  margin-bottom: 0;
+}
+
+nav,
+#footer {
+  font-family: "lato", sans-serif;
+  text-align: center;
+}
+
+#footer a {
+  color: white;
+}
+
+.social-icon {
+  display: inline-block;
+  margin: 0px 5px;
+}
+
+.navbar a {
+  color: white;
+}
+
+.tagline,
+.your-time {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* End of Heading and Footer */
 
 input {
   text-decoration: none;
   font-family: "lato", sans-serif;
   line-height: 1.2em;
-  letter-spacing: 0.0166em;
   font-size: 15px;
   color: #fff;
-  background-color: #128aae;
   border: none;
 }
 
@@ -60,19 +106,14 @@ input {
 .eventList {
   color: white;
   display: block;
-  margin: auto;
   line-height: 1.4em;
-  border: 2px solid white;
+  border: 2px solid #00d4fa;
   border-radius: 10px;
-  background-color: #006aab;
+  background-color: rgba(0, 0, 0, 0.7);
   margin-top: 15px;
-  width: 85%;
+  width: 80%;
+  margin-left: 10%;
   padding: 20px;
-}
-
-#eventsDisplay {
-  font-family: "lato", sans-serif;
-  margin-top: 15px;
 }
 
 .link {
@@ -83,10 +124,11 @@ input {
 
 #mapDisplay {
   display: none;
-  position: absolute;
-  top: 35%;
-  height: 300px;
-  width: 300px;
+  position: fixed;
+  top: 50px;
+  left: -10% !important;
+  height: 200px !important;
+  width: 200px;
 }
 
 /* Style the tab */
@@ -109,12 +151,12 @@ div.tab button {
 
 /* Change background color of buttons on hover */
 div.tab button:hover {
-  background-color: #128aae;
+  background-color: #00d4fa;
 }
 
 /* Create an active/current tablink class */
 div.tab button.active {
-  background-color: #128aae;
+  background-color: #00d4fa;
 }
 
 .tablinks,
@@ -135,115 +177,25 @@ div.tab button.active {
 
 /*div box styling which contains local weather , Travel sites, and events*/
 
-#stack {
-  font-size: 1.2em;
-  text-align: center;
-  display: block;
-  margin: auto;
-  font-family: Montserrat, Tahoma, Arial, sans-serif;
-}
-
-h2 {
-  margin-top: 0;
-}
-
-/* Old Search Bar with Rotating Animation */
-/* #stack figure{
-	margin:0 1em;
-	height: 5ch;
-	width:16em;
-	line-height: 5ch;
-	transform-style: preserve-3d;
-	transition: transform .5s ease;
-	cursor:pointer;
-	transform-origin: center center -8em;
-}
-
-figure {
-    -webkit-margin-before: 1em;
-    -webkit-margin-after: 1em;
-    -webkit-margin-start: 40px;
-    -webkit-margin-end: 40px;
-}
-
-#stack figure:hover{
-	transform: rotateY(-90deg);
-}
-
-#stack figure > *{
-	position: absolute;
-	width:inherit;
-	height: inherit;
-	overflow:hidden;
-	font-size: 11.60px !important;
-	color: #fff;
-	font-weight: 500;
-	border-top: .0625rem solid rgba(255, 255, 255 ,.1);
-	backface-visibility: hidden;
-}
-
-#stack figure div{
-	transform-origin: top center;
-	background: #006AAB;
-}
-
-#stack figure ul{
-	transform:rotateY(90deg) translateX(100%);
-	transform-origin: top right;
-	margin:0;
-	padding:0;
-	list-style:none;
-	width:100%;
-	background: #128AAE;
-}
-
-#stack ul li{
-	display: inline-block;
-	border-right:.0625rem solid rgba(255, 255, 255, .1);
-	padding-top: 4px;
-}
-
-p,li,a, #wea-de{
-	font-family: 'lato', sans-serif;
-	line-height: 1.2em;
-	letter-spacing: .0166em;
-	font-size: 15px;
-	color: #fff;
-}
-
-a:hover{
-	color:#009eff;
-
-}
-#stack ul li:last-child{
-	border-right:none;
-	padding: 1px;
-}
-#stack ul.full li{
-	width:100%;
-}
-#stack ul.half li{
-	width:35%;
-}
-#stack ul.two li{
-	width:31.5%;
-} */
-
-/* End of Old Search Bar with Rotating Animation */
-
 /* New Search Area */
-#stack {
-  height: auto;
-  /* width: 40%;
-  margin-left: 30%; */
+#search-menu {
+  width: 600px;
+  margin-left: calc(50% - 300px);
   margin-top: 50px;
   position: absolute;
   color: #fff;
   font-weight: 500;
   background-color: black;
-  border: 2px solid #006aab;
+  border: 2px solid #00d4fa;
   border-radius: 5px;
   height: 200px;
+  font-size: 1.2em;
+  text-align: left;
+  font-family: Montserrat, Tahoma, Arial, sans-serif;
+}
+
+#search-menu .row {
+  margin: 25px auto;
 }
 
 #search-bar {
@@ -261,41 +213,15 @@ a:hover{
 }
 
 .btn-primary {
-  background-color: #006aab;
+  background-color: #3596e0;
 }
 
-#stack .search-heading {
+#search-menu .search-heading {
   text-align: left;
   padding: 10px 20px;
-  height: 40px;
-  width: 100%;
-  line-height: 1.5;
-  margin-bottom: 20px;
-  border: 2px solid yellow;
-}
-
-/* End of New Search Area */
-
-/*Heading and Footer*/
-.navbar {
-  background-color: #0b071a;
-  color: white;
-}
-
-nav, #footer {
-  font-family: "lato", sans-serif;
-  line-height: 1.2em;
-  padding: 8px 8px 8px 8px;
-  text-align: center;
-}
-
-#footer a {
-	color: white;
-}
-
-.social-icon {
-  display: inline-block;
-  margin: 0px 5px;
+  height: auto;
+  line-height: 1.2;
+  float: left;
 }
 
 #socialiconImg {
@@ -304,11 +230,25 @@ nav, #footer {
   background: none;
 }
 
+ul {
+  text-align: left;
+  margin-left: -55px;
+}
+
 li {
   display: inline-block;
 }
 
-@media only screen and (max-width: 1680px) {
+#eventsDisplay {
+  width: 100%;
+  position: relative;
+  top: 300px;
+  left: 0;
+  font-size: 18px;
+  padding-bottom: 200px;
+}
+
+/* @media only screen and (max-width: 1680px) {
   #mapDisplay {
     height: 300px;
     max-width: 300px;
@@ -318,9 +258,9 @@ li {
     bottom: -35px !important;
     right: -50px !important;
   }
-}
+} */
 
-@media only screen and (max-width: 1280) {
+/* @media only screen and (max-width: 1280) {
   #mapDisplay {
     height: 300px;
     max-width: 300px;
@@ -330,10 +270,10 @@ li {
     bottom: 100px !important;
     right: 40px !important;
   }
-}
+} */
 
 @media only screen and (max-width: 980px) {
-  #mapDisplay {
+  /* #mapDisplay {
     height: 300px;
     max-width: 200%;
     margin: 10%;
@@ -341,11 +281,11 @@ li {
     position: fixed !important;
     bottom: 100px !important;
     right: -30px !important;
-  }
+  } */
 }
 
 @media only screen and (max-width: 768px) {
-  #mapDisplay {
+  /* #mapDisplay {
     height: 300px;
     width: 80%;
     margin: 10%;
@@ -353,7 +293,7 @@ li {
     position: relative !important;
     bottom: 0px !important;
     left: 0px !important;
-  }
+  } */
 
   #eventImage {
     width: 40%;
@@ -366,4 +306,64 @@ li {
     width: 100%;
     margin: 0px;
   }
+
+  .navbar div {
+    margin: 0;
+    padding: 0;
+  }
+
+  #search-menu {
+    margin-top: 80px;
+    margin-left: 0;
+  }
+}
+
+/* End of New Search Area */
+
+.scrolltop {
+  display: none;
+  width: 100%;
+  margin: 0 auto;
+  position: fixed;
+  bottom: 10px;
+  right: 0px;
+  z-index: 5000;
+}
+
+.scroll-btn {
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+  background: #00d4fa;
+  padding: 10px;
+  text-align: center;
+  margin: 0 0 0 0;
+  cursor: pointer;
+  transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  border-radius: 5px;
+}
+
+.scroll-btn:hover {
+  background-color: #006aab;
+}
+
+.scroll-btn a {
+  color: white;
+}
+
+.scroll-btn a:hover {
+  color: #d9d9d9 !important;
+  text-decoration: none;
+}
+
+.scroll-btn .fa {
+  font-size: 30px;
+  margin-top: -5px;
+  transition: 0.5s;
+  -moz-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
 }

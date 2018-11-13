@@ -20,7 +20,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-4 col-xs-12">
-					<h2 class="nav-brand">Event Hub</h2>
+					<h2 class="nav-brand"><a href="index.html">Event Hub</a></h2>
 				</div>
 				<div class="col-sm-4 col-xs-12 tagline">
 					<p><em>Discover events that match your interests!</em></p>
@@ -35,117 +35,79 @@
 		</div>
 	</nav>
 
-	<div class="container" id="stack">
-
-		<!-- City Name Input Heading -->
-		<div class="row">
-			<div class="col-xs-6">
-				<div class="city search-heading">Step 1: Type In City Name</div>
-			</div>
-			<div class="col-xs-6">
-				<input type="text" name="location" class="form-control" placeholder="City" id="search-bar" />
-				<button class="btn btn-default" type="submit" id="submit-id"><i class="glyphicon glyphicon-search"></i></button>
-			</div>
-		</div>
-
-		<!-- Event Type Heading -->
-		<div class="row" id="event-type-container">
-			<div class="col-xs-6 event-type search-heading">Step 2: Choose Event Type</div>
-			<div class="col-xs-6">
-				<ul class="two">
-					<li><input type="button"  class="btn btn-primary" id="btnGetMusicEvents" onclick="getEventsToUI('music')" value="Music" /></li>
-					<li><input type="button" class="btn btn-primary" id="btnGetBusinessEvents" onclick="getEventsToUI('business')" value="Business"/></li>
-					<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('family')" value="Family"/></li>
-				</ul>
-			</div>
-		</div>
-		
-		<!-- Weather Heading -->
-		<div class="row">
-			<div class="col-xs-6">
-				<div class="localTime"></div>
-				<div class="temp search-heading">Local Weather</div>
-			</div>
-			<div class="col-xs-6">
-				<ul class="two">
-					<li class="sunrise"></li>
-					<li class="humidity"></li>
-					<li class="sunset"></li>
-				</ul>
-			</div>
+	<!-- Scroll To Top Button -->
+	<div class='scrolltop'>
+		<div class='scroll-btn icon'>
+			<a href="#page-top-anchor"><i class="fa fa-2x fa-angle-up"></i><br>Top
+			</a>            
 		</div>
 	</div>
+	<!-- End of Scroll To Top Button -->
 
-	<!-- Original Code -->
-	<!-- <div class="container container-fluid">
-		<div class="row" id="stackContainer">
-			<div id="stack">
-				<figure>
-					<div>
-						<form>
-							<span class="city" id="wea-de">Search City Name</span>
-							<span class="country" id="wea-de"></span>
-					</div>
-						<ul class="two">
-							<li><input type="text" name="location" class="form-control" placeholder="City" id="search-bar" />
-							<li><button class="btn btn-default" type="submit" id="submit-id"><i class="glyphicon glyphicon-search"></i></button></li>
-							</li>
-						</ul>
-						</form>
-				</figure>
+	<main>
 
-				<figure id="weather-container">
-					<div>
-						<span id="wea-de" class="localTime"></span><span class="temp" id="wea-de"><p>Local Weather</p></span>
-					</div>
+		<!-- Search Menu -->
+		<div class="container" id="search-menu">
+
+			<!-- City Name Input Heading -->
+			<div class="row">
+				<div class="col-xs-6 city search-heading">Step 1: Type In City Name
+				</div>
+				<div class="col-xs-6">
+					<input type="text" name="location" class="form-control" placeholder="City" id="search-bar" />
+					<button class="btn btn-default" type="submit" id="submit-id"><i class="glyphicon glyphicon-search"></i></button>
+				</div>
+			</div>
+
+			<!-- Event Type Heading -->
+			<div class="row" id="event-type-container">
+				<div class="col-xs-6 event-type search-heading">Step 2: Choose Event Type</div>
+				<div class="col-xs-6">
+					<ul>
+						<li><input type="button"  class="btn btn-primary" id="btnGetMusicEvents" onclick="getEventsToUI('music')" value="Music" /></li>
+						<li><input type="button" class="btn btn-primary" id="btnGetBusinessEvents" onclick="getEventsToUI('business')" value="Business"/></li>
+						<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('family')" value="Family"/></li>
+					</ul>
+				</div>
+			</div>
+			
+			<!-- Weather Heading -->
+			<!-- <div class="row">
+				<div class="col-xs-6">
+					<div class="localTime search-heading">Time in Searched City: </div>
+					<div class="temp search-heading">Weather in Searched City: </div>
+				</div>
+				<div class="col-xs-6">
 					<ul class="two">
 						<li class="sunrise"></li>
 						<li class="humidity"></li>
 						<li class="sunset"></li>
 					</ul>
-				</figure>
+				</div>
+			</div> -->
+		</div>
 
-				<figure id="event-type-container">
-					<div class="event-type"><p>Choose Event Type</p></div>
-				<ul class="two">
-					<li><input type="button"  id="btnGetMusicEvents" onclick="getEventsToUI('music')" value="Music" /></li>
-					<li><input type="button" id="btnGetBusinessEvents" onclick="getEventsToUI('business')" value="Business"/></li>
-					<li><input type="button" id="btnGetFamilyEvents" onclick="getEventsToUI('family')" value="Family"/></li>
-				</ul>
-				</figure>
+		<!-- Display Section of Events -->
+		<div class="container container-fluid">
+			<div id="displayRow" class="row">
+				<div id="eventsDisplay" class="col-xs-7"></div>
+				<div id="mapDisplay" class="col-xs-5"></div>
 			</div>
 		</div>
-	</div> -->
 
-<!-- Google API Test Area -->
-<!-- <div class="container container-fluid">
-	<div class="row">
-		<div class="col-sm-12">
-			<div id="map" style="height: 800px;"></div>
+	</main>
+
+	<footer>
+		<div id="footer" class="navbar navbar-default">
+			<div>
+				<p>© 2017 Event Hub. All rights reservered.</p>
+				<p>Developed with <span style="font-size:200%;color:red;">&hearts;</span> by Brian Hart, Prathibha Chunchu, Guiyu Zhao, Michael Osgood, and Michael Lazear.
+				</p>
+				<p><a href="https://github.com/Zoey007/EventHub" target="_blank"> Visit GitHub Repo &nbsp; <span class="fa fa-lg fa-github"></span></a>
+				</p>	
+			</div>
 		</div>
-	</div>
-</div> -->
-<!-- End of Google API Test Area -->
-
- <!-- Display Section of Events -->
-<div class="container container-fluid">
- <div id="displayRow" class="row">
-	<div id="eventsDisplay" class="col-xs-12 col-sm-7 col-md-7 col-lg-7 col-xl-7"></div>
-	<div id="mapDisplay" class="col-xs-12 col-sm-5 col-md-5 col-lg-5 col-xl-5"></div>
- </div>
-</div>
-
-<footer>
-	<div id="footer" class="navbar navbar-default navbar-fixed-bottom">
-		<div>
-			<p>© 2017 Event Hub. All rights reservered.</p>
-			<p>Developed with <span style="font-size:200%;color:red;">&hearts;</span> by Brian Hart, Prathibha Chunchu, Guiyu Zhao, Michael Osgood, and Michael Lazear.
-			</p>
-			<p><a href="https://github.com/Zoey007/EventHub" target="_blank"> Visit GitHub Repo &nbsp; <span class="fa fa-lg fa-github"></span></a>
-			</p>	
-		</div>
-	</div>
-</footer>
+	</footer>
 
 	<!-- <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script> -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
