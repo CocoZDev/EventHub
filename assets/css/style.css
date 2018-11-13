@@ -111,6 +111,7 @@ input {
   top: 300px;
   left: 0;
   font-size: 18px;
+  margin-bottom: 200px;
 }
 
 #eventImage {
@@ -311,7 +312,7 @@ li {
 
   #eventsDisplay {
     width: 100%;
-    margin: 0px;
+    margin-top: 50px;
   }
 
   .navbar div {
@@ -322,6 +323,10 @@ li {
   #search-menu {
     margin-top: 150px;
     margin-left: 0;
+  }
+
+  #footer {
+    height: 140px;
   }
 }
 
