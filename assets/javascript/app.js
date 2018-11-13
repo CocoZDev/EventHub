@@ -6,7 +6,7 @@ function dayAndNight(){
   // console.log(current);
   // console.log(day_night);
 
-    if (day_night > 6 && day_night < 19){
+    if (day_night > 0 && day_night < 17){
       //Day
       document.body.style.backgroundImage = "url('assets/images/sunrise.jpg')";
     }
@@ -25,7 +25,9 @@ var userInput;
 
 $('#displayPanel').hide();
 
+// Execute a function when the user click on search glyphicon
 $("#submit-id").click(function(){
+  // Cancel the default action, if needed
   event.preventDefault();
   userInput = $('#search-bar').val();
   getWeather(); //GETS WEATHER FOR THE SEARCH CITY
@@ -33,6 +35,17 @@ $("#submit-id").click(function(){
   displayOnMap(userInput); //DISPLAY THE SELECTED CITY ON THE MAP
   $("#weather-container").removeClass("hidden");
   $("#event-type-container").removeClass("hidden");
+});
+
+// Execute a function when the user releases a key on the keyboard
+input.addEventListener("keyup", function(event) {
+  // Cancel the default action, if needed
+  event.preventDefault();
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Trigger the button element with a click
+    document.getElementById("submit-id").click();
+  }
 });
 
 //using weather api key getting weather details
