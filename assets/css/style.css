@@ -6,8 +6,8 @@
 html,
 body {
   height: 100%;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
 html {
@@ -17,9 +17,6 @@ html {
 body {
   background-image: url("../images/sunrise_org.jpg");
   background-size: cover;
-  /*height:100%;*/
-  min-height: 400px;
-  padding: 80px 0px;
 
   /* Fixed Background Image */
   background-repeat: no-repeat;
@@ -39,14 +36,25 @@ p {
   font-size: 17px;
 }
 
+/* Wrapper for page content to push down footer */
+main {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  /* margin: 0 auto -110px; */
+  margin-bottom: -110px;
+  /* Pad bottom by footer height */
+  padding: 0 0 110px;
+}
+
 #footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
+  height: 110px; /*same height as the margin to the bottom of the body */
   border: none;
   border-top: 1px solid #00d4fa;
-  margin-bottom: 0;
+  color: white;
+  padding: 10px;
+  background-color: black;
 }
 
 nav,
@@ -95,6 +103,14 @@ input {
   display: block;
   margin: auto;
   margin-top: 10px;
+}
+
+#eventsDisplay {
+  width: 100%;
+  position: relative;
+  top: 300px;
+  left: 0;
+  font-size: 18px;
 }
 
 #eventImage {
@@ -181,7 +197,7 @@ div.tab button.active {
 #search-menu {
   width: 600px;
   margin-left: calc(50% - 300px);
-  margin-top: 50px;
+  margin-top: 100px;
   position: absolute;
   color: #fff;
   font-weight: 500;
@@ -237,15 +253,6 @@ ul {
 
 li {
   display: inline-block;
-}
-
-#eventsDisplay {
-  width: 100%;
-  position: relative;
-  top: 300px;
-  left: 0;
-  font-size: 18px;
-  padding-bottom: 200px;
 }
 
 /* @media only screen and (max-width: 1680px) {
@@ -313,7 +320,7 @@ li {
   }
 
   #search-menu {
-    margin-top: 80px;
+    margin-top: 150px;
     margin-left: 0;
   }
 }
