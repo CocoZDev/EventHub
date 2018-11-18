@@ -2,7 +2,7 @@
 var eventType = "music";
 var address;
 var dateRange = "future";
-var noOfRecords = 20;
+var noOfRecords = 4;
 
 //CREATE AN EVENT OBJECT TO CAPTURE THE  EVENT RELATED INFORMAION
 
@@ -64,17 +64,20 @@ function queryEvents(eventType, address, noOfRecords, dateRange)
 }
 
 function createEventDiv(event){
-    const eventDIV = 
+    var eventDIV = 
         `<div class='row eventList'>
-            <div>
+            <div class="col-xs-3">
                 <a href='${event.url}' target='_blank'>
-                <img id ='eventImage' class= 'img-thumbnail project' src='${event.imgSrc}'alt=''></a>
+                <img class='img-rounded project' src='${event.imgSrc}'alt='' width='100%'></a>
             </div>
-            <div>
-                <span class='title'><h3>${event.title}</h3></span><a class='link' href='#'  target='_blank' onclick='displayAddressOnMap(this);return false;' data-info='${event.venue_address}'>${event.venue_address}</a></span><br>
-                <span>${event.city},${event.region},${event.country}</span><br>
-                <span><a class='link' href='${event.venue_url}'>${event.venue_name}</a></span><br>
-                <span>${event.start_time}</span><br>
+            <div class="col-xs-6" id="event-details">
+                <h3 class='title'>${event.title}</h3>
+                <a class='link' href='#'  target='_blank' onclick='displayAddressOnMap(this);return false;' data-info='${event.venue_address}'>${event.venue_address}</a>
+                <br>${event.city},${event.region},${event.country}
+                <br><a class='link' href='${event.venue_url}'>${event.venue_name}</a>
+                <br>${event.start_time}
+            </div>
+            <div class="col-xs-3" id="mapDisplay">
             </div>
         </div>`;
        
