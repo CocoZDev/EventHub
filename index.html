@@ -50,18 +50,23 @@
 
 			<!-- City Name Input Heading -->
 			<div class="row">
-				<div class="col-xs-6 city search-heading">Step 1: Type In City Name
+				<div class="col-xs-12 search-heading">Step 1: Type In City, State, and Country
 				</div>
-				<div class="col-xs-6">
-					<input type="text" name="location city country" class="form-control" placeholder="City" id="search-bar" />
-					<button class="btn btn-default" type="submit" id="submit-id"><i class="glyphicon glyphicon-search"></i></button>
+				<div class="col-xs-12">
+					<form class="form-inline">
+						<div class="form-group">
+							<input type="text" name="location" class="form-control" placeholder="City, State, Country" id="search-bar" />
+						</div>
+					</form>
 				</div>
 			</div>
 
 			<!-- Event Type Heading -->
 			<div class="row" id="event-type-container">
-				<div class="col-xs-6 event-type search-heading">Step 2: Choose Event Type</div>
-				<div class="col-xs-6">
+				<div class="col-xs-12 event-type search-heading">
+					Step 2: Choose Event Type
+				</div>
+				<div class="col-xs-12 button-group">
 					<ul>
 						<li><input type="button"  class="btn btn-primary" id="btnGetMusicEvents" onclick="getEventsToUI('music')" value="Music" /></li>
 						<li><input type="button" class="btn btn-primary" id="btnGetBusinessEvents" onclick="getEventsToUI('business')" value="Business"/></li>
@@ -71,28 +76,43 @@
 					</ul>
 				</div>
 			</div>
-			
-			<!-- Weather Heading -->
+
 			<div class="row">
-				<div class="col-xs-6">
-					<div class="localTime search-heading">Time in Searched City: </div>
-					<div class="temp search-heading">Weather in Searched City: </div>
+				<div class="col-xs-12 event-type search-heading">
+					Step 3: Search Nearby Events
 				</div>
-				<div class="col-xs-6">
-					<ul class="two">
-						<li class="sunrise"></li>
-						<li class="humidity"></li>
-						<li class="sunset"></li>
-					</ul>
+				<div class="col-xs-12">
+					<button type="submit" class="btn btn-primary" id="submit-id" onclick="getWeather() ">Search</button>
 				</div>
 			</div>
-		</div>
+			
+			<!-- Weather Heading -->
+			<div class="row hidden" id="weather-container">
+				<div class="col-xs-12">
+					<p>
+						Current Time in <span class="city"></span><span class="country"></span>: 
+						<br><span class="localTime"></span>
+					</p>
+				</div>
+				<div class="col-xs-12">
+					<p>
+						Current Weather in <span class="city"></span><span class="country"></span>: 
+						<p>
+							<div class="temp"></div>
+							<div class="humidity"></div>
+							<div class="sunrise"></div>
+							<div class="sunset"></div>
+						</p>
+					</p>
+				</div>
+			</div>
+		<!-- </div> -->
 
 		<!-- Display Section of Events -->
-		<div class="container container-fluid">
-			<div id="displayRow" class="row">
-				<div id="eventsDisplay" class="col-xs-12"></div>
-				<!-- <div id="mapDisplay" class="col-xs-5"></div> -->
+		<!-- <div class="container"> -->
+			<div class="row" id="displayRow" >
+				<div id="eventsDisplay" class="col-xs-8"></div>
+				<!-- <div id="mapDisplay" class="col-xs-4"></div> -->
 			</div>
 		</div>
 

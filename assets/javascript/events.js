@@ -41,7 +41,6 @@ function queryEvents(eventType, address, noOfRecords, dateRange)
       for (var i=0; i<oData.events.event.length; i++){
 
          event.title = oData.events.event[i].title;
-         event.description = oData.events.event[i].description;
          event.url = oData.events.event[i].url;
          if(oData.events.event[i].image.medium.url !== null){
             event.imgSrc = oData.events.event[i].image.medium.url;
@@ -51,9 +50,7 @@ function queryEvents(eventType, address, noOfRecords, dateRange)
          event.country = oData.events.event[i].country_name;
          event.venue_name = oData.events.event[i].venue_name;
          event.venue_address = oData.events.event[i].venue_address;
-         event.venue_url = oData.events.event[i].venue_url;
          event.start_time = oData.events.event[i].start_time;
-         event.url = oData.events.event[i].url;
 
          // NEED TO CLONE THE EVENT OBJECT SINCE OBJECTS ARE PASSED BY REFERNCE
          cloneEvent = Object.assign({}, event);
@@ -68,14 +65,16 @@ function createEventDiv(event){
         `<div class='row eventList'>
             <div class="col-xs-3">
                 <a href='${event.url}' target='_blank'>
-                <img class='img-rounded project' src='${event.imgSrc}'alt='' width='100%'></a>
+                <img class='img-rounded project' src='${event.imgSrc}'alt='event image' width='100%'></a>
             </div>
             <div class="col-xs-6" id="event-details">
                 <h3 class='title'>${event.title}</h3>
-                <a class='link' href='#'  target='_blank' onclick='displayAddressOnMap(this);return false;' data-info='${event.venue_address}'>${event.venue_address}</a>
-                <br>${event.city},${event.region},${event.country}
-                <br><a class='link' href='${event.venue_url}'>${event.venue_name}</a>
                 <br>${event.start_time}
+                <br>${event.venue_address}, ${event.city}, ${event.region}
+                <br>Venue: ${event.venue_name}
+                <br>
+                <a class='link' href='#'  target='_blank' onclick='displayAddressOnMap(this);return false;' data-info='${event.venue_address}'>View Map</a> | 
+                <a class='link' href='${event.url}'>Event Details</a>
             </div>
             <div class="col-xs-3" id="mapDisplay">
             </div>

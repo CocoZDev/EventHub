@@ -8,11 +8,11 @@ function dayAndNight(){
 
     if (day_night > 0 && day_night < 17){
       //Day
-      document.body.style.backgroundImage = "url('assets/images/sunrise_org.jpg')";
+      document.body.style.backgroundImage = "url('assets/images/kyle-hinkson-498968-unsplash.jpg')";
     }
     else{
       //Night
-      document.body.style.backgroundImage = "url('assets/images/night_org.jpg')";
+      document.body.style.backgroundImage = "url('assets/images/lights-party-dancing-music.jpg')";
     }
 }
 dayAndNight();//======background change end code
@@ -21,19 +21,31 @@ dayAndNight();//======background change end code
 var APIKey = "5e68d3fec5ccfb64ad77db9dcbc833c7";
 var search = "";
 var callBackResponse = "";
-var userInput = $('#search-bar').val();
-var input = document.getElementById("search-bar");
+var userInput;
+// var input = document.getElementById("search-bar");
+
+console.log("userInput: " + userInput);
+// console.log("input: " + input);
 
 $('#displayPanel').hide();
 
+// $( "#search-bar" )
+//   .keyup(function() {
+//     var value = $( this ).val();
+//     $( ".city" ).text( value );
+//   })
+//   .keyup();
+
 // Execute a function when the user click on search glyphicon
-$("#submit-id").click(function(){
+$("#submit-id").click(function(e){
   // Cancel the default action, if needed
-  event.preventDefault();
+  e.preventDefault();
+  userInput = $("#search-bar").val();
+  $( ".city" ).text( userInput );
   console.log('User Input Captured: ' + userInput);
   getWeather(); //GETS WEATHER FOR THE SEARCH CITY
   getEventsToUI('music'); //DEFAULT CITY SEARCH WOULD DISPLAY MUSIC EVENTS
-  displayOnMap(userInput); //DISPLAY THE SELECTED CITY ON THE MAP
+  // displayOnMap(userInput); //DISPLAY THE SELECTED CITY ON THE MAP
   $("#weather-container").removeClass("hidden");
   $("#event-type-container").removeClass("hidden");
 });
@@ -62,11 +74,13 @@ $("#submit-id").click(function(){
       })
       // We store all of the retrieved data inside of an object called "response"
       .done(function(response) {
+
+        console.log("JSON response:" + response);
         // Transfer content to HTML
         $(".city").html( response.name + ', ');
         $(".country").html(response.sys.country);
         $(".humidity").html("Humidity: " + response.main.humidity+" %");
-        $(".temp").html(Math.round(response.main.temp)+" &#x2109");
+        $(".temp").html("Temperature: " + Math.round(response.main.temp)+" &#x2109");
 
 
         var sunrise = response.sys.sunrise;
@@ -74,8 +88,8 @@ $("#submit-id").click(function(){
         var sunset = response.sys.sunset;
         var y = moment(sunset*1000).format('h:mm A');
 
-        $(".sunrise").html('Sunrise ' + x);
-        $(".sunset").html(' Sunset ' + y);
+        $(".sunrise").html('Sunrise: ' + x);
+        $(".sunset").html(' Sunset: ' + y);
 
       var lat = response.coord.lat;
       //console.log(lat);
@@ -101,7 +115,7 @@ $("#submit-id").click(function(){
     callBackResponse = weatherDetails;
   }
 
-// clock function
+// User Current Time / Clock function
 (function () {
   var clockElement = document.getElementById("clock");
   function updateClock(clock) {

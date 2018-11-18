@@ -188,16 +188,16 @@ input {
 
 /* New Search Area */
 #search-menu {
-  width: 600px;
-  margin-left: calc(50% - 300px);
-  margin-top: 100px;
-  position: absolute;
+  width: 400px;
+  margin-top: 64px;
+  position: fixed;
+  left: 0;
+  top: 0;
   color: #fff;
   font-weight: 500;
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.7);
   /* border: 2px solid #00d4fa; */
-  border-radius: 5px;
-  height: 200px;
+  height: calc(100% - 100px);
   font-size: 1.2em;
   text-align: left;
   font-family: Montserrat, Tahoma, Arial, sans-serif;
@@ -208,26 +208,23 @@ input {
 }
 
 #search-bar {
-  width: 150px;
-  position: absolute;
-  top: 5px;
-  left: 50px;
+  width: 300px;
 }
 
 .btn-default {
-  position: absolute;
-  top: 5px;
-  left: 0;
   color: #3596e0;
 }
 
 .btn-primary {
   background-color: #3596e0;
 }
+.button-group {
+  margin-left: 10px;
+}
 
 #search-menu .search-heading {
   text-align: left;
-  padding: 10px 20px;
+  margin: 5px auto;
   height: auto;
   line-height: 1.2;
   float: left;
@@ -259,7 +256,7 @@ li {
 
   #eventsDisplay {
     width: 100%;
-    margin-top: 50px;
+    margin-top: 200px;
   }
 
   .navbar div {
