@@ -337,45 +337,46 @@ li {
   width: 100%;
   margin: 0 auto;
   position: fixed;
-  bottom: 10px;
+  bottom: 0px;
   right: 0px;
   z-index: 5000;
 }
 
 .scroll-btn {
   position: absolute;
-  right: 15px;
-  bottom: 10px;
+  right: 20px;
+  bottom: 130px;
   background: #00d4fa;
   padding: 10px;
   text-align: center;
   margin: 0 0 0 0;
   cursor: pointer;
-  transition: 0.5s;
-  -moz-transition: 0.5s;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
   border-radius: 5px;
+  border: 1.5px solid black;
 }
+
+@media (max-width: 768px) {
+  .scroll-btn {
+    bottom: 150px;
+    right: 10px;
+  }
+}
+
 
 .scroll-btn:hover {
   background-color: #006aab;
 }
 
 .scroll-btn a {
-  color: white;
+  color: black;
 }
 
 .scroll-btn a:hover {
-  color: #d9d9d9 !important;
+  color: black !important;
   text-decoration: none;
 }
 
 .scroll-btn .fa {
   font-size: 30px;
-  margin-top: -5px;
-  transition: 0.5s;
-  -moz-transition: 0.5s;
-  -webkit-transition: 0.5s;
-  -o-transition: 0.5s;
+  margin-top: 0px;
 }
