@@ -66,12 +66,14 @@
 						<li><input type="button"  class="btn btn-primary" id="btnGetMusicEvents" onclick="getEventsToUI('music')" value="Music" /></li>
 						<li><input type="button" class="btn btn-primary" id="btnGetBusinessEvents" onclick="getEventsToUI('business')" value="Business"/></li>
 						<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('family')" value="Family"/></li>
+						<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('art')" value="Art"/></li>
+						<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('books')" value="Books"/></li>
 					</ul>
 				</div>
 			</div>
 			
 			<!-- Weather Heading -->
-			<!-- <div class="row">
+			<div class="row">
 				<div class="col-xs-6">
 					<div class="localTime search-heading">Time in Searched City: </div>
 					<div class="temp search-heading">Weather in Searched City: </div>
@@ -83,7 +85,7 @@
 						<li class="sunset"></li>
 					</ul>
 				</div>
-			</div> -->
+			</div>
 		</div>
 
 		<!-- Display Section of Events -->
@@ -98,12 +100,23 @@
 
 	<footer>
 		<div id="footer" class="navbar navbar-default navbar-fixed-bottom">
-			<div>
-				<p>© 2017 Event Hub. All rights reservered.</p>
-				<p>Developed with <span style="color:red;">&hearts;</span> by Brian Hart, Prathibha Chunchu, Guiyu Zhao, Michael Osgood, and Michael Lazear.
-				</p>
-				<p><a href="https://github.com/Zoey007/EventHub" target="_blank"> Visit GitHub Repo &nbsp; <span class="fa fa-lg fa-github"></span></a>
-				</p>	
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-md-2 col-md-offset-2">
+						<div class="eventful-badge eventful-large">
+							<img src="http://api.eventful.com/images/powered/eventful_139x44.gif"
+								alt="Local Events, Concerts, Tickets">
+							<p><a href="http://eventful.com/">Events</a> by Eventful</p>
+						</div>						
+					</div>
+					<div class="col-xs-12 col-md-8 footer-right">	
+						<p>© 2017 Event Hub. All rights reservered.</p>					
+						<p>Developed with <span style="color:red;">&hearts;</span> by Guiyu Zhao, Brian Hart, Prathibha Chunchu, Michael Osgood, and Michael Lazear.
+						</p>
+						<p><a href="https://github.com/Zoey007/EventHub" target="_blank"> Visit GitHub Repo &nbsp; <span class="fa fa-lg fa-github"></span></a>
+						</p>	
+					</div>
+				</div>
 			</div>
 		</div>
 	</footer>

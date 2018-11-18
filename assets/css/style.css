@@ -24,12 +24,23 @@ body {
   background-position: center;
 }
 
+/* Eventful Logo */
+
+.eventful-badge,
+.eventful-badge * {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  text-align: center !important;
+  color: #ccc !important;
+  text-decoration: none !important;
+}
+
 /*Heading and Footer*/
 .navbar {
   background-color: #0b071a;
   color: white;
   border: none;
-  border-bottom: 1px solid #00d4fa;
 }
 
 p {
@@ -47,24 +58,10 @@ main {
   padding: 0 0 110px;
 }
 
-#footer {
-  width: 100%;
-  height: 110px; /*same height as the margin to the bottom of the body */
-  border: none;
-  border-top: 1px solid #00d4fa;
-  color: white;
-  padding: 10px;
-  background-color: black;
-}
-
 nav,
 #footer {
   font-family: "lato", sans-serif;
   text-align: center;
-}
-
-#footer a {
-  color: white;
 }
 
 .social-icon {
@@ -81,6 +78,46 @@ nav,
   margin-top: 30px;
   text-align: center;
   font-size: 18px;
+}
+
+#footer {
+  width: 100%;
+  height: 110px; /*same height as the margin to the bottom of the body */
+  border: none;
+  color: white;
+  padding: 10px;
+  background-color: black;
+  text-align: left;
+  line-height: 1.2;
+  font-weight: 300;
+}
+
+#footer p {
+  font-size: 14px;
+}
+
+#footer a {
+  color: white;
+}
+
+.footer-right {
+  border-left: 1px solid white;
+}
+
+@media (max-width: 768px) {
+
+  .eventful-badge {
+    padding-bottom: 15px !important;
+  }
+
+  #footer {
+    text-align: center;
+    height: auto !important;
+
+  }
+  .footer-right {
+    border: none;
+  }
 }
 
 /* End of Heading and Footer */
@@ -112,6 +149,8 @@ input {
   left: 0;
   font-size: 18px;
   margin-bottom: 200px;
+  /* background-color: rgba(0, 0, 0, 0.7); */
+  padding: 20px;
 }
 
 #eventImage {
@@ -148,50 +187,6 @@ input {
   width: 200px;
 }
 
-/* Style the tab */
-div.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #006aab;
-}
-
-/* Style the buttons inside the tab */
-div.tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-}
-
-/* Change background color of buttons on hover */
-div.tab button:hover {
-  background-color: #00d4fa;
-}
-
-/* Create an active/current tablink class */
-div.tab button.active {
-  background-color: #00d4fa;
-}
-
-.tablinks,
-#displayInfo {
-  color: #fff;
-  font-family: "lato", sans-serif;
-  line-height: 2em;
-  letter-spacing: 0.0166em;
-  font-size: 15px;
-}
-
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  font-family: "lato", sans-serif;
-}
-
 /*div box styling which contains local weather , Travel sites, and events*/
 
 /* New Search Area */
@@ -203,7 +198,7 @@ div.tab button.active {
   color: #fff;
   font-weight: 500;
   background-color: black;
-  border: 2px solid #00d4fa;
+  /* border: 2px solid #00d4fa; */
   border-radius: 5px;
   height: 200px;
   font-size: 1.2em;
@@ -346,13 +341,14 @@ li {
   position: absolute;
   right: 20px;
   bottom: 130px;
-  background: #00d4fa;
+  background: #3596e0;
   padding: 10px;
   text-align: center;
   margin: 0 0 0 0;
   cursor: pointer;
   border-radius: 5px;
   border: 1.5px solid black;
+  box-shadow: 2px 2px 5px black;
 }
 
 @media (max-width: 768px) {
@@ -362,9 +358,8 @@ li {
   }
 }
 
-
 .scroll-btn:hover {
-  background-color: #006aab;
+  background-color: #24699e;
 }
 
 .scroll-btn a {
