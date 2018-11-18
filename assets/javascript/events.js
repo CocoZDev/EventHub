@@ -12,6 +12,7 @@ var event = {
    url:"",
    imgSrc:"",
    city:"",
+   region:"",
    country:"",
    venue_name:"",
    venue_address:"",
@@ -32,7 +33,7 @@ function queryEvents(eventType, address, noOfRecords, dateRange)
       "date": dateRange, //"2017080100-2017103000" or "THIS-MONTH" or "FUTURE"
       page_size: noOfRecords, //NO. OF RECORDS TO FETCH FROM THE QUERY
       sort_order: "popularity", //SORTING RELEVANCE
-      within: "15", // WITHIN 20 MILES
+      within: "50", // WITHIN HOW MANY MILES
    };
 
    EVDB.API.call("/events/search", oArgs, function(oData) {
@@ -46,6 +47,7 @@ function queryEvents(eventType, address, noOfRecords, dateRange)
             event.imgSrc = oData.events.event[i].image.medium.url;
          }
          event.city = oData.events.event[i].city_name;
+         event.region = oData.events.event[i].region_name;
          event.country = oData.events.event[i].country_name;
          event.venue_name = oData.events.event[i].venue_name;
          event.venue_address = oData.events.event[i].venue_address;
@@ -62,29 +64,22 @@ function queryEvents(eventType, address, noOfRecords, dateRange)
 }
 
 function createEventDiv(event){
-   var eventDIV = "<div class = 'row eventList'><div><a href='"+
-                     event.url+
-                     "'><img id ='eventImage' class= 'img-thumbnail project' src='"+
-                     event.imgSrc+
-                     "'alt='"+
-                     "'></a></div><div><span class='title'>"+
-                     "<h3>" +
-                     event.title+
-                     "</h3></span>"+
-                     "<a class='link' href='#' onclick='displayAddressOnMap(this);return false;' data-info='"+
-                     event.venue_address+
-                     "'>"+
-                     event.venue_address+
-                     "</a></span><br><span>"+
-                     event.city+","+event.country+
-                     "</span><br><span>" +
-                     "<a class='link' href='"+
-                     event.venue_url+
-                     "'>"+event.venue_name+"</a></span><br><span>"+
-                     event.start_time+"</span><br>" +
-                      "</div></div></div>";
-            var eventsHolder = $('#eventsDisplay');
-            eventsHolder.append(eventDIV);
+    const eventDIV = 
+        `<div class='row eventList'>
+            <div>
+                <a href='${event.url}' target='_blank'>
+                <img id ='eventImage' class= 'img-thumbnail project' src='${event.imgSrc}'alt=''></a>
+            </div>
+            <div>
+                <span class='title'><h3>${event.title}</h3></span><a class='link' href='#'  target='_blank' onclick='displayAddressOnMap(this);return false;' data-info='${event.venue_address}'>${event.venue_address}</a></span><br>
+                <span>${event.city},${event.region},${event.country}</span><br>
+                <span><a class='link' href='${event.venue_url}'>${event.venue_name}</a></span><br>
+                <span>${event.start_time}</span><br>
+            </div>
+        </div>`;
+       
+    var eventsHolder = $('#eventsDisplay');
+    eventsHolder.append(eventDIV);
 
 }
 
@@ -98,8 +93,9 @@ function displayAddressOnMap(item){
 function getEventsToUI(eventType){
    $("#eventsDisplay").empty();
    address = $("#search-bar").val();
-   if((address === null) || (address === "")) {
-      address = "Irvine, CA"; //SETTING DEFAULT CITY NAME IF NO CITY NAME SPECIFIED FROM UI
-   }
-   queryEvents(eventType, address, noOfRecords, dateRange);
+   if((address == null) || (address == "")) {
+      alert("Please provide City and State to search nearby events.")
+   } else {
+       queryEvents(eventType, address, noOfRecords, dateRange);
+   };
 }

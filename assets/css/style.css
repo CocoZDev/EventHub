@@ -173,9 +173,8 @@ input {
 }
 
 .link {
-  color: yellow;
+  color: #00d4fa;
   text-decoration: underline;
-  font-style: italic;
 }
 
 #mapDisplay {
