@@ -19,13 +19,8 @@ html {
   overflow-x: hidden;
 }
 
-html {
-  border: 2px solid yellow;
-}
-
 body {
   font-family: "lato", sans-serif;
-    border: 2px solid red;
   background-image: url("../images/kyle-hinkson-498968-unsplash.jpg");
   background-size: cover;
 
@@ -74,6 +69,7 @@ nav,
 #footer {
   font-family: "lato", sans-serif;
   text-align: center;
+  background-color: black;
 }
 
 .social-icon {
@@ -98,7 +94,6 @@ nav,
   border: none;
   color: white;
   padding: 10px;
-  background-color: black;
   text-align: center;
   line-height: 1.2;
   font-weight: 300;
@@ -158,14 +153,15 @@ input {
   color: white;
   display: block;
   line-height: 1.4em;
-  border: 2px solid #00d4fa;
+  border: 1px solid white;
   border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.9);
   margin-top: 15px;
   width: calc(50% - 20px);
   margin: 10px;
   padding: 20px;
-  min-height: 220px;
+  height: auto;
+  min-height: 200px;
 }
 
 .event-details {
@@ -177,31 +173,39 @@ input {
   margin-top: -10px;
 }
 
+/* Clip Long Event Title */
 .event-details .event-title {
-  white-space: nowrap; 
-  width: auto; 
+  white-space: nowrap;
+  width: auto;
   overflow: hidden;
-  text-overflow: ellipsis; 
+  text-overflow: ellipsis;
   border: 1px solid #000000;
+}
+
+/* Show Full Event Title on Hover */
+.event-details .event-title:hover {
+  white-space: normal;
+  width: auto;
 }
 
 .event-image {
   float: left;
   margin: 10px;
-  border: 2px solid yellow;
   width: 128px;
   height: 128px;
 }
 
-.link {
+a:link {
   color: #00d4fa;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
-#mapDisplay {
-  display: none;
-  height: 200px !important;
-  width: 100%;
+a:visited,
+a:hover,
+a:active,
+a:focus {
+  color: #00d4fa;
+  text-decoration: underline;
 }
 
 /*div box styling which contains local weather , Travel sites, and events*/
@@ -214,7 +218,7 @@ input {
   top: 64px;
   color: #fff;
   font-weight: 500;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: #002569;
   /* border: 2px solid #00d4fa; */
   height: calc(100% - 100px);
   font-size: 1.2em;
@@ -226,12 +230,8 @@ input {
   margin: 10px auto;
 }
 
-#search-bar {
+#search-menu #search-bar {
   width: 190px;
-}
-
-.btn-default {
-  color: #3596e0;
 }
 
 .btn-primary {
@@ -264,21 +264,54 @@ li {
   margin: 2px;
 }
 
-@media only screen and (max-width: 768px) {
-  #eventImage {
-    width: 40%;
-    float: right;
-    border-width: 0.5px;
-    margin-right: 0px;
-  }
+#mapDisplay {
+  display: none;
+  height: 200px !important;
+  width: 100%;
+}
 
+@media (max-width: 1085px) {
+  .event-item {
+    width: 95%;
+  }
+}
+
+@media (max-width: 768px) {
   .navbar div {
     margin: 0;
     padding: 0;
   }
 
+  .event-image {
+    float: none;
+  }
+
   #search-menu {
     top: 90px;
+    width: 100%;
+    height: auto;
+  }
+
+  #event-container {
+    position: relative;
+    z-index: -1;
+    top: 400px;
+    left: 0;
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  #event-list {
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  #mapDisplay {
+    position: absolute !important;
+    top: -260px;
+    left: 60%;
+    width: 150px;
+    height: 150px !important;
   }
 }
 
@@ -304,7 +337,7 @@ li {
   margin: 0 0 0 0;
   cursor: pointer;
   border-radius: 5px;
-  border: 1.5px solid black;
+  /* border: 1.5px solid black; */
   box-shadow: 2px 2px 5px black;
 }
 
