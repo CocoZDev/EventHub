@@ -2,7 +2,7 @@
 var eventType="";
 var address;
 var dateRange = "future";
-var noOfRecords = 10;
+var noOfRecords = 100;
 
 //CREATE AN EVENT OBJECT TO CAPTURE THE  EVENT RELATED INFORMAION
 
@@ -97,9 +97,12 @@ function getEventsToUI(eventType){
    $("#event-list").empty();
    address = $("#search-bar").val();
    if((address == null) || (address == "")) {
-      alert("Please provide City and State to search nearby events.")
+      alert("Please provide City Name or Zip Code to search events.")
    } else {
+      $("#event-list").removeClass("hidden");
+      $("#mapDisplay").removeClass("hidden");
        queryEvents(eventType, address, noOfRecords, dateRange);
+       displayOnMap(userInput); //Display the selected city on the map
    };
 }
 
@@ -110,7 +113,4 @@ $("#submit-id").click(function(e){
    userInput = $("#search-bar").val();
    console.log('User Input Captured: ' + userInput);
    getEventsToUI(''); // Display events
-   displayOnMap(userInput); //Display the selected city on the map
-   $("#event-list").removeClass("hidden");
-   $("#mapDisplay").removeClass("hidden");
  });

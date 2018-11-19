@@ -21,7 +21,7 @@ html {
 
 body {
   font-family: "lato", sans-serif;
-  background-image: url("../images/kyle-hinkson-498968-unsplash.jpg");
+  /* background-image: url("../images/kyle-hinkson-498968-unsplash-2.jpg"); */
   background-size: cover;
 
   /* Fixed Background Image */
@@ -151,7 +151,7 @@ input {
   line-height: 1.4em;
   border: 1px solid white;
   border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.85);
   margin-top: 15px;
   width: calc(50% - 20px);
   margin: 10px;
@@ -211,10 +211,10 @@ a:focus {
   width: 300px;
   position: fixed;
   left: 0;
-  top: 64px;
+  top: 62px;
   color: #fff;
   font-weight: 500;
-  background-color: #002569;
+  background-color: rgba(0, 37, 105, 0.85);
   /* border: 2px solid #00d4fa; */
   height: calc(100% - 100px);
   font-size: 1.2em;

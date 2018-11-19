@@ -6,13 +6,13 @@ function dayAndNight(){
   // console.log(current);
   // console.log(day_night);
 
-    if (day_night > 0 && day_night < 17){
+    if (day_night > 0 && day_night < 16){
       //Day
-      document.body.style.backgroundImage = "url('assets/images/kyle-hinkson-498968-unsplash.jpg')";
+      document.body.style.backgroundImage = "url('assets/images/kyle-hinkson-498968-unsplash-2.jpg')";
     }
     else{
       //Night
-      document.body.style.backgroundImage = "url('assets/images/kyle-hinkson-498968-unsplash.jpg')";
+      document.body.style.backgroundImage = "url('assets/images/lights-party-dancing-music.jpg')";
     }
 }
 dayAndNight();//======background change end code
