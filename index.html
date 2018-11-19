@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Project#1</title>
-	<meta name="viewport" content="width=device-width, maximum-scale = 1.0, minimum-scale = 1.0, initial-scale=1.0" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- bootstrap link  -Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<!-- Font Awesome CDN -->
@@ -40,58 +40,58 @@
 	<main>
 
 		<!-- Search Menu -->
-		<div class="container" id="search-menu">
+		<section>
+			<div class="container" id="search-menu">	
+				<!-- City Name Input Heading -->
+				<div class="row">
+					<div class="col-xs-12">
+						<h4>Find Events In:</h4>
+					</div>
+					<div class="col-xs-12">
+						<form class="form-inline">
+							<div class="form-group">
+								<input type="text" name="location" class="form-control" placeholder="City Name or Zip Code" id="search-bar" />
+								<button type="submit" class="btn btn-success" id="submit-id">
+									<i class="glyphicon glyphicon-search"></i>
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
 
-			<!-- City Name Input Heading -->
-			<div class="row">
-				<div class="col-xs-12 event-type search-heading">
-					Find Events In:
+				<!-- Event Type Heading -->
+				<div class="row">
+					<div class="col-xs-12">
+						<h4>Filter by Category:</h4>						
+					</div>
+					<div class="col-xs-12 button-group">
+						<ul>
+							<li><input type="button"  class="btn btn-primary" id="btnGetMusicEvents" onclick="getEventsToUI('music')" value="Concerts" /></li>
+							<li><input type="button" class="btn btn-primary" id="btnGetBusinessEvents" onclick="getEventsToUI('business')" value="Networking"/></li>
+							<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('comedy')" value="Comedy"/></li>
+							<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('family')" value="Kids & Family"/></li>
+							<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('food')" value="Food"/></li>
+							<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('outdoors')" value="Outdoor"/></li>
+							<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('sports')" value="Sports"/></li>
+							<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('science')" value="Technologies"/></li>
+						</ul>
+					</div>
 				</div>
-				<div class="col-xs-12">
-					<form class="form-inline">
-						<div class="form-group">
-							<input type="text" name="location" class="form-control" placeholder="City Name or Zip Code" id="search-bar" />
-							<button type="submit" class="btn btn-success" id="submit-id">
-								<i class="glyphicon glyphicon-search"></i>
-							</button>
-						</div>
-					</form>
-				</div>
-			</div>
-
-			<!-- Event Type Heading -->
-			<div class="row" id="event-type-container">
-				<div class="col-xs-12 event-type search-heading">
-					Filter by Category:
-				</div>
-				<div class="col-xs-12 button-group">
-					<ul>
-						<li><input type="button"  class="btn btn-primary" id="btnGetMusicEvents" onclick="getEventsToUI('music')" value="Concerts" /></li>
-						<li><input type="button" class="btn btn-primary" id="btnGetBusinessEvents" onclick="getEventsToUI('business')" value="Networking"/></li>
-						<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('comedy')" value="Comedy"/></li>
-						<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('family')" value="Kids & Family"/></li>
-						<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('food')" value="Food"/></li>
-						<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('outdoors')" value="Outdoor"/></li>
-						<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('sports')" value="Sports"/></li>
-						<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('science')" value="Technologies"/></li>
-					</ul>
+				
+				<!-- Display Google Map of Searched Location -->
+				<div class="row">
+					<div class="col-xs-12">
+						<div id="mapDisplay"></div>
+					</div>
 				</div>
 			</div>
-			
-			<!-- Display Google Map of Searched Location -->
-			<div class="row">
-				<div class="col-xs-12">
-					<div id="mapDisplay"></div>
-				</div>
-			</div>
-		</div>
+		</section>
 
 		<!-- Display Section of Events -->
-		<div class="container">
-			<div class="row" id="displayRow" >
-				<div id="eventsDisplay" class="col-xs-8"></div>
+		<section>
+			<div class="container hidden" id="event-list">
 			</div>
-		</div>
+		</section>
 
 	</main>
 
@@ -99,16 +99,16 @@
 		<div id="footer" class="navbar navbar-default navbar-fixed-bottom">
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-12 col-md-2 col-md-offset-2">
+					<div class="col-xs-4 col-md-2">
 						<div class="eventful-badge eventful-large">
 							<img src="http://api.eventful.com/images/powered/eventful_139x44.gif"
 								alt="Local Events, Concerts, Tickets">
 							<p><a href="http://eventful.com/" target="_blank">Events</a> by Eventful</p>
 						</div>						
 					</div>
-					<div class="col-xs-12 col-md-8 footer-right">	
+					<div class="col-xs-8 col-md-10">	
 						<p>© 2017 Event Hub. All rights reservered.</p>					
-						<p>Developed with <span style="color:red;">&hearts;</span> by Guiyu Zhao, Brian Hart, Prathibha Chunchu, Michael Osgood, and Michael Lazear.
+						<p>Developed <span style="color:red;">&hearts;</span> by Guiyu Zhao, Brian Hart, Prathibha Chunchu, Michael Osgood, and Michael Lazear.
 						</p>
 						<p><a href="https://github.com/Zoey007/EventHub" target="_blank"> Visit GitHub Repo &nbsp; <span class="fa fa-lg fa-github"></span></a>
 						</p>	

@@ -66,23 +66,22 @@ function queryEvents(eventType, address, noOfRecords, dateRange)
 
 function createEventDiv(event){
     var eventDIV = 
-        `<div class='row eventList'>
-            <div class="col-xs-5">
+        `<div class='row event-item'>
+            <div class="col-xs-12 col-md-6">
                 <a href='${event.url}' target='_blank'>
-                <img class='img-rounded img-responsive project' src='${event.imgSrc}'alt='event image'></a>
+                <img class='img-rounded img-responsive event-image' src='${event.imgSrc}'alt='event image'></a>
             </div>
-            <div class="col-xs-7" id="event-details">
+            <div class="col-xs-12 col-md-6 event-details">
                 <h3 class='title'>${event.title}</h3>
                 <br>${event.start_time}
                 <br>${event.venue_address}, ${event.city}, ${event.region}
-                <br>Venue: ${event.venue_name}
                 <br>
                 <a class='link' href='#'  target='_blank' onclick='displayAddressOnMap(this);return false;' data-info='${event.venue_address}'>View Map</a> | 
                 <a class='link' href='${event.url}' target='_blank'>Event Details</a>
             </div>
         </div>`;
        
-    var eventsHolder = $('#eventsDisplay');
+    var eventsHolder = $('#event-list');
     eventsHolder.append(eventDIV);
 
 }
@@ -95,7 +94,7 @@ function displayAddressOnMap(item){
 
 //CALLABLE FUNCTION FROM UI BASED UPON THE EVENT TYPE
 function getEventsToUI(eventType){
-   $("#eventsDisplay").empty();
+   $("#event-list").empty();
    address = $("#search-bar").val();
    if((address == null) || (address == "")) {
       alert("Please provide City and State to search nearby events.")
@@ -103,3 +102,14 @@ function getEventsToUI(eventType){
        queryEvents(eventType, address, noOfRecords, dateRange);
    };
 }
+
+// Execute a function when the user click on search button
+$("#submit-id").click(function(e){
+   // Cancel the default action, if needed
+   e.preventDefault();
+   userInput = $("#search-bar").val();
+   console.log('User Input Captured: ' + userInput);
+   getEventsToUI(''); // Display events
+   displayOnMap(userInput); //Display the selected city on the map
+   $("#event-list").removeClass("hidden");
+ });

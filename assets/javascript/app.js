@@ -27,8 +27,6 @@ var userInput;
 console.log("userInput: " + userInput);
 // console.log("input: " + input);
 
-$('#displayPanel').hide();
-
 // $( "#search-bar" )
 //   .keyup(function() {
 //     var value = $( this ).val();
@@ -36,16 +34,16 @@ $('#displayPanel').hide();
 //   })
 //   .keyup();
 
-// Execute a function when the user click on search button
-$("#submit-id").click(function(e){
-  // Cancel the default action, if needed
-  e.preventDefault();
-  userInput = $("#search-bar").val();
-  console.log('User Input Captured: ' + userInput);
-  getEventsToUI(''); // Display events
-  displayOnMap(userInput); //Display the selected city on the map
-  $("#event-type-container").removeClass("hidden");
-});
+// // Execute a function when the user click on search button
+// $("#submit-id").click(function(e){
+//   // Cancel the default action, if needed
+//   e.preventDefault();
+//   userInput = $("#search-bar").val();
+//   console.log('User Input Captured: ' + userInput);
+//   getEventsToUI(''); // Display events
+//   displayOnMap(userInput); //Display the selected city on the map
+//   $("#event-list").removeClass("hidden");
+// });
 
 // // Execute a function when the user releases a key on the keyboard
 // input.addEventListener("keyup", function(event) {
