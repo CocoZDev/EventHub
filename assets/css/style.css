@@ -138,11 +138,10 @@ input {
 }
 
 #event-container {
-  width: calc(100% - 300px);
+  width: calc(100% - 400px);
   position: relative;
   top: 90px;
-  left: 300px;
-  padding-bottom: 100px;
+  left: 350px;
   font-size: 18px;
 }
 
@@ -287,6 +286,7 @@ li {
   }
 
   #search-menu {
+    position: relative;
     top: 94px;
     width: 100%;
     height: auto;
@@ -294,24 +294,24 @@ li {
 
   #event-container {
     position: relative;
-    z-index: -1;
-    top: 340px;
+    top: 100px;
     left: 0;
     width: 100%;
     margin-left: 0;
   }
   
   #event-list {
-    width: 80%;
-    margin-left: 10%;
+    width: 63%;
+    margin-left: 0;
   }
 
   #mapDisplay {
-    position: absolute !important;
-    top: -225px;
-    left: 55%;
-    width: 200px;
-    height: 100px !important;
+    position: fixed !important;
+    top: 340px;
+    right: 20px;
+    width: 150px;
+    height: 150px !important;
+    z-index: 100; 
   }
 }
 
