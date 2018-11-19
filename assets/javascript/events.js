@@ -74,9 +74,7 @@ function createEventDiv(event){
                 <br>Venue: ${event.venue_name}
                 <br>
                 <a class='link' href='#'  target='_blank' onclick='displayAddressOnMap(this);return false;' data-info='${event.venue_address}'>View Map</a> | 
-                <a class='link' href='${event.url}'>Event Details</a>
-            </div>
-            <div class="col-xs-3" id="mapDisplay">
+                <a class='link' href='${event.url}' target='_blank'>Event Details</a>
             </div>
         </div>`;
        

@@ -14,7 +14,7 @@
 	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </head>
 
-<body onload="autocomplete()">
+<body onload="autocomplete()" id="page-top-anchor">
 
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container">
@@ -95,24 +95,26 @@
 					</p>
 				</div>
 				<div class="col-xs-12">
-					<p>
-						Current Weather in <span class="city"></span><span class="country"></span>: 
-						<p>
-							<div class="temp"></div>
-							<div class="humidity"></div>
-							<div class="sunrise"></div>
-							<div class="sunset"></div>
-						</p>
-					</p>
+					<p>Current Weather in <span class="city"></span><span class="country"></span>: </p>
+					<div id="weather-container">
+						<p class="temp"></p>
+						<p class="humidity"></p>
+						<p class="sunrise"></p>
+						<p class="sunset"></p>
+					</div>
 				</div>
 			</div>
-		<!-- </div> -->
+			<div class="row">
+				<div class="col-xs-12">
+					<div id="mapDisplay"></div>
+				</div>
+			</div>
+		</div>
 
 		<!-- Display Section of Events -->
-		<!-- <div class="container"> -->
+		<div class="container">
 			<div class="row" id="displayRow" >
 				<div id="eventsDisplay" class="col-xs-8"></div>
-				<!-- <div id="mapDisplay" class="col-xs-4"></div> -->
 			</div>
 		</div>
 

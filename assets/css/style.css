@@ -15,7 +15,7 @@ html {
 }
 
 body {
-  background-image: url("../images/sunrise_org.jpg");
+  background-image: url("../images/kyle-hinkson-498968-unsplash.jpg");
   background-size: cover;
 
   /* Fixed Background Image */
@@ -44,7 +44,8 @@ body {
 }
 
 p {
-  font-size: 17px;
+  font-size: 15px;
+  font-weight: 400;
 }
 
 /* Wrapper for page content to push down footer */
@@ -177,11 +178,8 @@ input {
 
 #mapDisplay {
   display: none;
-  height: 150px !important;
-  width: 150px;
-  position: relative;
-  top: 10px;
-  left: 10px;
+  height: 200px !important;
+  width: 100%;
 }
 
 /*div box styling which contains local weather , Travel sites, and events*/
@@ -245,9 +243,21 @@ li {
   display: inline-block;
 }
 
+#weather-container {
+  margin-left: 20px;
+}
+
+#eventsDisplay {
+  width: 70%;
+  position: absolute;
+  top: 64px;
+  left: calc (100% - 400px);
+  margin-left: 400px;
+}
+
 @media only screen and (max-width: 768px) {
 
-  #eventImage {
+  /* #eventImage {
     width: 40%;
     float: right;
     border-width: 0.5px;
@@ -257,7 +267,7 @@ li {
   #eventsDisplay {
     width: 100%;
     margin-top: 200px;
-  }
+  } */
 
   .navbar div {
     margin: 0;
@@ -265,7 +275,7 @@ li {
   }
 
   #search-menu {
-    margin-top: 150px;
+    margin-top: 140px;
     margin-left: 0;
   }
 

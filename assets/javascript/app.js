@@ -142,7 +142,7 @@ $(window).scroll(function() {
 
 $(function() {
   $('.scroll-btn').click(function() {
-    $('html,body').animate({ scrollTop: $('#page-top-anchor').offset().top - 50}, '500');
+    $('html,body').animate({ scrollTop: $('#page-top-anchor').offset().top - 60}, '500');
     return false;
   });
 });
