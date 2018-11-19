@@ -19,10 +19,10 @@
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-sm-6 col-xs-12">
-					<h2 class="nav-brand"><a href="index.html">Event Hub</a></h2>
+				<div class="col-xs-12 col-sm-6">
+					<h2 class="nav-brand">Event Hub</h2>
 				</div>
-				<div class="col-sm-6 col-xs-12 tagline">
+				<div class="col-xs-12 col-sm-6 tagline">
 					<p><em>Discover events that match your interests!</em></p>
 				</div>
 			</div>
@@ -45,15 +45,19 @@
 				<!-- City Name Input Heading -->
 				<div class="row">
 					<div class="col-xs-12">
-						<h4>Find Events In:</h4>
+						<h4 class="search-heading">Find Events In:</h4>
 					</div>
+				</div>
+				<div class="row">
 					<div class="col-xs-12">
 						<form class="form-inline">
 							<div class="form-group">
-								<input type="text" name="location" class="form-control" placeholder="City Name or Zip Code" id="search-bar" />
-								<button type="submit" class="btn btn-success" id="submit-id">
-									<i class="glyphicon glyphicon-search"></i>
-								</button>
+								<div class="input-group">
+									<!-- <div class="input-group-addon glyphicon glyphicon-map-marker"></div> -->
+									<input type="text" name="location" class="form-control" placeholder="City Name or Zip Code" id="search-bar" />
+									<button type="submit" class="btn btn-success glyphicon glyphicon-search" id="submit-id">
+									</button>
+								</div>
 							</div>
 						</form>
 					</div>
@@ -62,8 +66,10 @@
 				<!-- Event Type Heading -->
 				<div class="row">
 					<div class="col-xs-12">
-						<h4>Filter by Category:</h4>						
+						<h4 class="search-heading">Filter by Category:</h4>						
 					</div>
+				</div>
+				<div class="row">
 					<div class="col-xs-12 button-group">
 						<ul>
 							<li><input type="button"  class="btn btn-primary" id="btnGetMusicEvents" onclick="getEventsToUI('music')" value="Concerts" /></li>
@@ -71,9 +77,9 @@
 							<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('comedy')" value="Comedy"/></li>
 							<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('family')" value="Kids & Family"/></li>
 							<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('food')" value="Food"/></li>
-							<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('outdoors')" value="Outdoor"/></li>
+							<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('outdoors')" value="Outdoors"/></li>
 							<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('sports')" value="Sports"/></li>
-							<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('science')" value="Technologies"/></li>
+							<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('science')" value="Technology"/></li>
 						</ul>
 					</div>
 				</div>
@@ -81,7 +87,7 @@
 				<!-- Display Google Map of Searched Location -->
 				<div class="row">
 					<div class="col-xs-12">
-						<div id="mapDisplay"></div>
+						<div id="mapDisplay" class="hidden"></div>
 					</div>
 				</div>
 			</div>

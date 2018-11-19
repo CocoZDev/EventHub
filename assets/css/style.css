@@ -47,6 +47,7 @@ body {
   background-color: #0b071a;
   color: white;
   border: none;
+  width: 100%;
 }
 
 p {
@@ -75,10 +76,6 @@ nav,
 .social-icon {
   display: inline-block;
   margin: 0px 5px;
-}
-
-.navbar a {
-  color: white;
 }
 
 .tagline,
@@ -226,27 +223,30 @@ a:focus {
   font-family: Montserrat, Tahoma, Arial, sans-serif;
 }
 
-#search-menu .row {
-  margin: 10px auto;
+#search-menu #search-bar {
+  width: 195px;
+  margin-top: 1px;
 }
 
-#search-menu #search-bar {
-  width: 190px;
+.input-group-addon {
+  background-color: white;
 }
 
 .btn-primary {
   background-color: #3596e0;
 }
+
+.btn-success {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
 .button-group {
   margin-left: 10px;
 }
 
 #search-menu .search-heading {
-  text-align: left;
-  margin: 5px auto;
-  height: auto;
-  line-height: 1.2;
-  float: left;
+  margin-top: 20px;
 }
 
 #socialiconImg {
@@ -265,7 +265,7 @@ li {
 }
 
 #mapDisplay {
-  display: none;
+  margin-top: 15px;
   height: 200px !important;
   width: 100%;
 }
@@ -287,7 +287,7 @@ li {
   }
 
   #search-menu {
-    top: 90px;
+    top: 94px;
     width: 100%;
     height: auto;
   }
@@ -295,7 +295,7 @@ li {
   #event-container {
     position: relative;
     z-index: -1;
-    top: 400px;
+    top: 340px;
     left: 0;
     width: 100%;
     margin-left: 0;
@@ -308,10 +308,10 @@ li {
 
   #mapDisplay {
     position: absolute !important;
-    top: -260px;
-    left: 60%;
-    width: 150px;
-    height: 150px !important;
+    top: -225px;
+    left: 55%;
+    width: 200px;
+    height: 100px !important;
   }
 }
 
@@ -331,7 +331,7 @@ li {
   position: absolute;
   right: 20px;
   bottom: 130px;
-  background: #3596e0;
+  background: green;
   padding: 10px;
   text-align: center;
   margin: 0 0 0 0;
@@ -339,6 +339,10 @@ li {
   border-radius: 5px;
   /* border: 1.5px solid black; */
   box-shadow: 2px 2px 5px black;
+}
+
+.scroll-btn .fa-angle-up {
+  color: white;
 }
 
 @media (max-width: 768px) {
@@ -349,7 +353,7 @@ li {
 }
 
 .scroll-btn:hover {
-  background-color: #24699e;
+  background-color: rgb(2, 112, 2);
 }
 
 .scroll-btn a {

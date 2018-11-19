@@ -112,4 +112,5 @@ $("#submit-id").click(function(e){
    getEventsToUI(''); // Display events
    displayOnMap(userInput); //Display the selected city on the map
    $("#event-list").removeClass("hidden");
+   $("#mapDisplay").removeClass("hidden");
  });
