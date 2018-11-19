@@ -12,7 +12,7 @@ function dayAndNight(){
     }
     else{
       //Night
-      document.body.style.backgroundImage = "url('assets/images/lights-party-dancing-music.jpg')";
+      document.body.style.backgroundImage = "url('assets/images/artist-1838653_1920.jpg')";
     }
 }
 dayAndNight();//======background change end code
