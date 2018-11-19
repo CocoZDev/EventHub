@@ -157,12 +157,11 @@ input {
   margin: 10px;
   padding: 20px;
   height: auto;
-  min-height: 200px;
+  min-height: 160px;
 }
 
 .event-details {
   line-height: 1.5;
-  font-size: 14px;
 }
 
 .event-details img {
@@ -175,7 +174,7 @@ input {
   width: auto;
   overflow: hidden;
   text-overflow: ellipsis;
-  border: 1px solid #000000;
+  /* border: 1px solid #000000; */
 }
 
 /* Show Full Event Title on Hover */
@@ -269,6 +268,13 @@ li {
   width: 100%;
 }
 
+@media (max-width: 1200px) {
+
+  .event-image {
+    float: right
+  }
+}
+
 @media (max-width: 1085px) {
   .event-item {
     width: 95%;
@@ -299,7 +305,7 @@ li {
     width: 100%;
     margin-left: 0;
   }
-  
+
   #event-list {
     width: 63%;
     margin-left: 0;
@@ -308,10 +314,10 @@ li {
   #mapDisplay {
     position: fixed !important;
     top: 340px;
-    right: 20px;
+    right: 40px;
     width: 150px;
     height: 150px !important;
-    z-index: 100; 
+    z-index: 100;
   }
 }
 
@@ -368,4 +374,22 @@ li {
 .scroll-btn .fa {
   font-size: 30px;
   margin-top: 0px;
+}
+
+/* Loading Animation  */
+.loader {
+  display: none;
+  border: 10px solid #f3f3f3; /* Light grey */
+  border-top: 10px solid #3596e0; /* Blue */
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1s linear infinite;
+  margin-left: 50%;
+  margin-top: 25%;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

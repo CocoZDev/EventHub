@@ -77,3 +77,15 @@ $(function() {
     return false;
   });
 });
+
+// ========== Loading Animation  ========== //
+
+$(document).ready(function () {
+
+  $('.loader').bind("ajaxSend", function() {
+      $(this).show();
+  }).bind("ajaxComplete", function() {
+      $(this).hide();
+  });
+
+});
