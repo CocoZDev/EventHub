@@ -2,7 +2,7 @@
 var eventType="";
 var address;
 var dateRange = "future";
-var noOfRecords = 4;
+var noOfRecords = 10;
 
 //CREATE AN EVENT OBJECT TO CAPTURE THE  EVENT RELATED INFORMAION
 
@@ -66,20 +66,20 @@ function queryEvents(eventType, address, noOfRecords, dateRange)
 
 function createEventDiv(event){
     var eventDIV = 
-        `<div class='row event-item'>
-            <div class="col-xs-12 col-md-6">
-                <a href='${event.url}' target='_blank'>
-                <img class='img-rounded img-responsive event-image' src='${event.imgSrc}'alt='event image'></a>
-            </div>
-            <div class="col-xs-12 col-md-6 event-details">
-                <h3 class='title'>${event.title}</h3>
-                <br>${event.start_time}
-                <br>${event.venue_address}, ${event.city}, ${event.region}
-                <br>
-                <a class='link' href='#'  target='_blank' onclick='displayAddressOnMap(this);return false;' data-info='${event.venue_address}'>View Map</a> | 
-                <a class='link' href='${event.url}' target='_blank'>Event Details</a>
-            </div>
-        </div>`;
+        `<div class="col-xs-12 col-md-6 event-item">
+               <div class="event-details">
+                  <a href='${event.url}' target='_blank'>
+                     <img class='img-rounded img-responsive event-image' src='${event.imgSrc}'alt='event image'>
+                  </a>
+                  <h4 class='event-title'>${event.title}</h4>
+                  <p>${event.start_time}
+                     <br>${event.venue_address}, ${event.city}, ${event.region}
+                     <br>
+                     <a class='link' href='#'  target='_blank' onclick='displayAddressOnMap(this);return false;' data-info='${event.venue_address}'>View Map</a> | 
+                     <a class='link' href='${event.url}' target='_blank'>Event Details</a>
+                  </p>
+               </div>
+            </div>`;
        
     var eventsHolder = $('#event-list');
     eventsHolder.append(eventDIV);
