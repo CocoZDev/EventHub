@@ -106,7 +106,6 @@ nav,
 }
 
 @media (max-width: 768px) {
-
   .eventful-badge {
     padding-bottom: 15px !important;
   }
@@ -114,7 +113,6 @@ nav,
   #footer {
     text-align: center;
     height: auto !important;
-
   }
   .footer-right {
     border: none;
@@ -154,8 +152,8 @@ input {
 
 #eventImage {
   float: left;
-  /* padding: 5px; */
   margin-right: 20px;
+  width: 300px;
 }
 
 .eventList {
@@ -186,7 +184,7 @@ input {
 
 /* New Search Area */
 #search-menu {
-  width: 400px;
+  width: 300px;
   margin-top: 64px;
   position: fixed;
   left: 0;
@@ -206,7 +204,7 @@ input {
 }
 
 #search-bar {
-  width: 300px;
+  width: 190px;
 }
 
 .btn-default {
@@ -235,16 +233,12 @@ input {
 }
 
 ul {
-  text-align: left;
   margin-left: -55px;
 }
 
 li {
   display: inline-block;
-}
-
-#weather-container {
-  margin-left: 20px;
+  margin: 2px;
 }
 
 #eventsDisplay {
@@ -256,18 +250,12 @@ li {
 }
 
 @media only screen and (max-width: 768px) {
-
-  /* #eventImage {
+  #eventImage {
     width: 40%;
     float: right;
     border-width: 0.5px;
     margin-right: 0px;
   }
-
-  #eventsDisplay {
-    width: 100%;
-    margin-top: 200px;
-  } */
 
   .navbar div {
     margin: 0;
@@ -275,12 +263,11 @@ li {
   }
 
   #search-menu {
-    margin-top: 140px;
-    margin-left: 0;
+    margin-top: 90px;
   }
 
   #footer {
-    height: 140px;
+    height: auto;
   }
 }
 

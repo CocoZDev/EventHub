@@ -17,19 +17,13 @@
 <body onload="autocomplete()" id="page-top-anchor">
 
 	<nav class="navbar navbar-default navbar-fixed-top">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
-				<div class="col-sm-4 col-xs-12">
+				<div class="col-sm-6 col-xs-12">
 					<h2 class="nav-brand"><a href="index.html">Event Hub</a></h2>
 				</div>
-				<div class="col-sm-4 col-xs-12 tagline">
+				<div class="col-sm-6 col-xs-12 tagline">
 					<p><em>Discover events that match your interests!</em></p>
-				</div>
-				<div class="col-sm-4 col-xs-12 your-time">
-					<p>
-						Your Time: 
-						<span id="clock"></span> 
-					</p>
 				</div>
 			</div>
 		</div>
@@ -50,12 +44,16 @@
 
 			<!-- City Name Input Heading -->
 			<div class="row">
-				<div class="col-xs-12 search-heading">Step 1: Type In City, State, and Country
+				<div class="col-xs-12 event-type search-heading">
+					Find Events In:
 				</div>
 				<div class="col-xs-12">
 					<form class="form-inline">
 						<div class="form-group">
-							<input type="text" name="location" class="form-control" placeholder="City, State, Country" id="search-bar" />
+							<input type="text" name="location" class="form-control" placeholder="City Name or Zip Code" id="search-bar" />
+							<button type="submit" class="btn btn-success" id="submit-id">
+								<i class="glyphicon glyphicon-search"></i>
+							</button>
 						</div>
 					</form>
 				</div>
@@ -64,46 +62,23 @@
 			<!-- Event Type Heading -->
 			<div class="row" id="event-type-container">
 				<div class="col-xs-12 event-type search-heading">
-					Step 2: Choose Event Type
+					Filter by Category:
 				</div>
 				<div class="col-xs-12 button-group">
 					<ul>
-						<li><input type="button"  class="btn btn-primary" id="btnGetMusicEvents" onclick="getEventsToUI('music')" value="Music" /></li>
-						<li><input type="button" class="btn btn-primary" id="btnGetBusinessEvents" onclick="getEventsToUI('business')" value="Business"/></li>
-						<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('family')" value="Family"/></li>
-						<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('art')" value="Art"/></li>
-						<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('books')" value="Books"/></li>
+						<li><input type="button"  class="btn btn-primary" id="btnGetMusicEvents" onclick="getEventsToUI('music')" value="Concerts" /></li>
+						<li><input type="button" class="btn btn-primary" id="btnGetBusinessEvents" onclick="getEventsToUI('business')" value="Networking"/></li>
+						<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('comedy')" value="Comedy"/></li>
+						<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('family')" value="Kids & Family"/></li>
+						<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('food')" value="Food"/></li>
+						<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('outdoors')" value="Outdoor"/></li>
+						<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('sports')" value="Sports"/></li>
+						<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('science')" value="Technologies"/></li>
 					</ul>
 				</div>
 			</div>
-
-			<div class="row">
-				<div class="col-xs-12 event-type search-heading">
-					Step 3: Search Nearby Events
-				</div>
-				<div class="col-xs-12">
-					<button type="submit" class="btn btn-primary" id="submit-id" onclick="getWeather() ">Search</button>
-				</div>
-			</div>
 			
-			<!-- Weather Heading -->
-			<div class="row hidden" id="weather-container">
-				<div class="col-xs-12">
-					<p>
-						Current Time in <span class="city"></span><span class="country"></span>: 
-						<br><span class="localTime"></span>
-					</p>
-				</div>
-				<div class="col-xs-12">
-					<p>Current Weather in <span class="city"></span><span class="country"></span>: </p>
-					<div id="weather-container">
-						<p class="temp"></p>
-						<p class="humidity"></p>
-						<p class="sunrise"></p>
-						<p class="sunset"></p>
-					</div>
-				</div>
-			</div>
+			<!-- Display Google Map of Searched Location -->
 			<div class="row">
 				<div class="col-xs-12">
 					<div id="mapDisplay"></div>

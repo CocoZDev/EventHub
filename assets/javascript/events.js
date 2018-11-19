@@ -1,5 +1,5 @@
 // Default API Setting
-var eventType = "music";
+var eventType="";
 var address;
 var dateRange = "future";
 var noOfRecords = 4;
@@ -35,6 +35,8 @@ function queryEvents(eventType, address, noOfRecords, dateRange)
       sort_order: "popularity", //SORTING RELEVANCE
       within: "50", // WITHIN HOW MANY MILES
    };
+   console.log("eventType: " + eventType);
+   console.log("oArgs: " + oArgs);
 
    EVDB.API.call("/events/search", oArgs, function(oData) {
       var cloneEvent;
@@ -56,6 +58,8 @@ function queryEvents(eventType, address, noOfRecords, dateRange)
          cloneEvent = Object.assign({}, event);
          events.push(cloneEvent);
          createEventDiv(cloneEvent);
+
+         console.log("cloneEvent: " + cloneEvent);
       }
    });
 }
@@ -63,11 +67,11 @@ function queryEvents(eventType, address, noOfRecords, dateRange)
 function createEventDiv(event){
     var eventDIV = 
         `<div class='row eventList'>
-            <div class="col-xs-3">
+            <div class="col-xs-5">
                 <a href='${event.url}' target='_blank'>
-                <img class='img-rounded project' src='${event.imgSrc}'alt='event image' width='100%'></a>
+                <img class='img-rounded img-responsive project' src='${event.imgSrc}'alt='event image'></a>
             </div>
-            <div class="col-xs-6" id="event-details">
+            <div class="col-xs-7" id="event-details">
                 <h3 class='title'>${event.title}</h3>
                 <br>${event.start_time}
                 <br>${event.venue_address}, ${event.city}, ${event.region}
