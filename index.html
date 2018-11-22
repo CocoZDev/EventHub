@@ -23,7 +23,7 @@
 					<h2 class="nav-brand">Event Hub</h2>
 				</div>
 				<div class="col-xs-12 col-sm-6 tagline">
-					<p><em>Discover events that match your interests!</em></p>
+					Discover events that match your interests!
 				</div>
 			</div>
 		</div>
@@ -55,7 +55,7 @@
 								<div class="input-group">
 									<!-- <div class="input-group-addon glyphicon glyphicon-map-marker"></div> -->
 									<input type="text" name="location" class="form-control" placeholder="City Name or Zip Code" id="search-bar" />
-									<button type="submit" class="btn btn-success glyphicon glyphicon-search" id="submit-id">
+									<button type="submit" class="btn btn-success glyphicon glyphicon-search" id="submit-btn">
 									</button>
 								</div>
 							</div>
@@ -74,12 +74,13 @@
 						<ul>
 							<li><input type="button"  class="btn btn-primary" id="btnGetMusicEvents" onclick="getEventsToUI('music')" value="Concerts" /></li>
 							<li><input type="button" class="btn btn-primary" id="btnGetBusinessEvents" onclick="getEventsToUI('business')" value="Networking"/></li>
-							<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('comedy')" value="Comedy"/></li>
-							<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('family')" value="Kids & Family"/></li>
-							<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('food')" value="Food"/></li>
-							<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('outdoors')" value="Outdoors"/></li>
-							<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('sports')" value="Sports"/></li>
-							<li><input type="button" class="btn btn-primary" id="btnGetFamilyEvents" onclick="getEventsToUI('science')" value="Technology"/></li>
+							<li><input type="button" class="btn btn-primary" onclick="getEventsToUI('comedy')" value="Comedy"/></li>
+							<li><input type="button" class="btn btn-primary" onclick="getEventsToUI('family')" value="Kids & Family"/></li>
+							<li><input type="button" class="btn btn-primary" onclick="getEventsToUI('food')" value="Food"/></li>
+							<li><input type="button" class="btn btn-primary" onclick="getEventsToUI('outdoors')" value="Outdoors"/></li>
+							<li><input type="button" class="btn btn-primary" onclick="getEventsToUI('sports')" value="Sports"/></li>
+							<li><input type="button" class="btn btn-primary" onclick="getEventsToUI('science')" value="Technology"/></li>
+							<li><input type="button" class="btn btn-primary" onclick="getEventsToUI('')" value="All Events"/></li>
 						</ul>
 					</div>
 				</div>
@@ -96,13 +97,13 @@
 		<!-- Display Section of Events -->
 		<section>
 			<div class="container" id="event-container">
-				<div class='row hidden' id="event-list">
+				<div class="row" id="event-list">
 				</div>
+				<!-- Loading Animation -->
+				<div class="row hidden" id="loader"></div>
 			</div>
 		</section>
 
-		<!-- Loading Animation -->
-		<div class="loader"></div>
 
 	</main>
 
@@ -149,7 +150,5 @@
 	<script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXBAzbg8b6KLfa_Tudom17EDflmOaKleI&callback=initMap&libraries=places">
 	</script>
-	<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXBAzbg8b6KLfa_Tudom17EDflmOaKleI&callback=initMap"
-    async defer></script> -->
 </body>
 </html>

@@ -48,6 +48,22 @@ body {
   color: white;
   border: none;
   width: 100%;
+  font-family: "lato", sans-serif;
+  text-align: center;
+}
+
+.navbar-fixed-top {
+  border-bottom: 2px solid #47ab15;
+}
+
+.nav-brand {
+  color: #47ab15;
+  font-weight: 600;
+}
+
+.tagline {
+  margin-top: 30px;
+  font-size: 17px;
 }
 
 p {
@@ -66,34 +82,20 @@ main {
   padding: 0 0 110px;
 }
 
-nav,
-#footer {
-  font-family: "lato", sans-serif;
-  text-align: center;
-  background-color: black;
-}
-
 .social-icon {
   display: inline-block;
   margin: 0px 5px;
 }
 
-.tagline,
-.your-time {
-  margin-top: 30px;
-  text-align: center;
-  font-size: 18px;
-}
-
 #footer {
   width: 100%;
   height: auto; /*same height as the margin to the bottom of the body */
-  border: none;
   color: white;
   padding: 10px;
   text-align: center;
   line-height: 1.2;
   font-weight: 300;
+  border-top: 2px solid #47ab15;
 }
 
 #footer p {
@@ -139,25 +141,43 @@ input {
 
 #event-container {
   width: calc(100% - 400px);
+  height: auto;
   position: relative;
   top: 90px;
   left: 350px;
   font-size: 18px;
+  padding-bottom: 100px;
+}
+
+/* Loading Animation  */
+#loader {
+  border: 10px solid black;
+  border-top: 10px solid #47ab15;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1s linear infinite;
+  margin: 250px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .event-item {
   color: white;
   display: block;
   line-height: 1.4em;
-  border: 1px solid white;
+  border: 2px solid white;
   border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0.9);
   margin-top: 15px;
   width: calc(50% - 20px);
   margin: 10px;
   padding: 20px;
   height: auto;
-  min-height: 160px;
+  min-height: 210px;
 }
 
 .event-details {
@@ -165,7 +185,7 @@ input {
 }
 
 .event-details img {
-  margin-top: -10px;
+  margin-top: 0;
 }
 
 /* Clip Long Event Title */
@@ -183,6 +203,12 @@ input {
   width: auto;
 }
 
+@media (max-width: 1085px) {
+  .event-details .event-title {
+    white-space: normal;
+  }
+}
+
 .event-image {
   float: left;
   margin: 10px;
@@ -197,8 +223,7 @@ a:link {
 
 a:visited,
 a:hover,
-a:active,
-a:focus {
+a:active {
   color: #00d4fa;
   text-decoration: underline;
 }
@@ -213,7 +238,7 @@ a:focus {
   top: 62px;
   color: #fff;
   font-weight: 500;
-  background-color: rgba(0, 37, 105, 0.85);
+  background-color: rgba(0, 37, 107, 0.9);
   /* border: 2px solid #00d4fa; */
   height: calc(100% - 100px);
   font-size: 1.2em;
@@ -266,6 +291,8 @@ li {
   margin-top: 15px;
   height: 200px !important;
   width: 100%;
+  border-radius: 10px;
+  border: 3px solid #47ab15;
 }
 
 @media (max-width: 1200px) {
@@ -289,6 +316,7 @@ li {
 
   .event-image {
     float: none;
+    margin: auto;
   }
 
   #search-menu {
@@ -304,6 +332,7 @@ li {
     left: 0;
     width: 100%;
     margin-left: 0;
+    height: auto;
   }
 
   #event-list {
@@ -313,8 +342,8 @@ li {
 
   #mapDisplay {
     position: fixed !important;
-    top: 340px;
-    right: 40px;
+    top: 330px;
+    right: 10px;
     width: 150px;
     height: 150px !important;
     z-index: 100;
@@ -335,9 +364,9 @@ li {
 
 .scroll-btn {
   position: absolute;
-  right: 20px;
-  bottom: 130px;
-  background: green;
+  right: 15px;
+  bottom: 115px;
+  background: #47ab15;
   padding: 10px;
   text-align: center;
   margin: 0 0 0 0;
@@ -374,22 +403,4 @@ li {
 .scroll-btn .fa {
   font-size: 30px;
   margin-top: 0px;
-}
-
-/* Loading Animation  */
-.loader {
-  display: none;
-  border: 10px solid #f3f3f3; /* Light grey */
-  border-top: 10px solid #3596e0; /* Blue */
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  animation: spin 1s linear infinite;
-  margin-left: 50%;
-  margin-top: 25%;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }

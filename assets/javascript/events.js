@@ -2,7 +2,8 @@
 var eventType="";
 var address;
 var dateRange = "future";
-var noOfRecords = 100;
+var noOfRecords = 120;
+var showLoader = false;
 
 //CREATE AN EVENT OBJECT TO CAPTURE THE  EVENT RELATED INFORMAION
 
@@ -23,6 +24,17 @@ var event = {
 //ARRAY OF EVENTS
 var events = [];
 
+// Check Loader Status
+function loaderStatusCheck() {
+   if (showLoader == true) {
+      $("#loader").removeClass("hidden");
+   } else if (showLoader == false) {
+      $("#loader").addClass("hidden");
+   }
+   alert("showLoader: " + showLoader);
+   console.log("showLoader: " + showLoader);
+};
+
 // FUNCTION TO DISPLAY EVENTS FOR A GIVEN CITY NAME
 function queryEvents(eventType, address, noOfRecords, dateRange)
 {
@@ -35,8 +47,6 @@ function queryEvents(eventType, address, noOfRecords, dateRange)
       sort_order: "popularity", //SORTING RELEVANCE
       within: "50", // WITHIN HOW MANY MILES
    };
-   console.log("eventType: " + eventType);
-   console.log("oArgs: " + oArgs);
 
    EVDB.API.call("/events/search", oArgs, function(oData) {
       var cloneEvent;
@@ -44,9 +54,11 @@ function queryEvents(eventType, address, noOfRecords, dateRange)
 
          event.title = oData.events.event[i].title;
          event.url = oData.events.event[i].url;
-         if(oData.events.event[i].image.medium.url !== null){
+         // if(oData.events.event[i].image.medium.url == null){
+         //    event.imgSrc = "../images/no-image-available.png";
+         // } else {
             event.imgSrc = oData.events.event[i].image.medium.url;
-         }
+         // };
          event.city = oData.events.event[i].city_name;
          event.region = oData.events.event[i].region_name;
          event.country = oData.events.event[i].country_name;
@@ -58,9 +70,11 @@ function queryEvents(eventType, address, noOfRecords, dateRange)
          cloneEvent = Object.assign({}, event);
          events.push(cloneEvent);
          createEventDiv(cloneEvent);
-
-         console.log("cloneEvent: " + cloneEvent);
       }
+
+      // After loop is done, check loader status
+      showLoader = false;
+      loaderStatusCheck();
    });
 }
 
@@ -71,7 +85,7 @@ function createEventDiv(event){
                   <a href='${event.url}' target='_blank'>
                      <img class='img-rounded img-responsive event-image' src='${event.imgSrc}'alt='event image'>
                   </a>
-                  <h4 class='event-title'>${event.title}</h4>
+                  <h3 class='event-title'>${event.title}</h3>
                   <p>${event.start_time}
                      <br>${event.venue_address}, ${event.city}, ${event.region}
                      <br>
@@ -83,7 +97,6 @@ function createEventDiv(event){
        
     var eventsHolder = $('#event-list');
     eventsHolder.append(eventDIV);
-
 }
 
 //TO DISPLAY THE SELECTED EVENT ADDRESS ON THE ADJACENT MAP
@@ -99,18 +112,29 @@ function getEventsToUI(eventType){
    if((address == null) || (address == "")) {
       alert("Please provide City Name or Zip Code to search events.")
    } else {
-      $("#event-list").removeClass("hidden");
-      $("#mapDisplay").removeClass("hidden");
+      showLoader = true;
+      loaderStatusCheck();
+       $("#mapDisplay").removeClass("hidden");
+       displayOnMap(address); //Display the selected city on the map
        queryEvents(eventType, address, noOfRecords, dateRange);
-       displayOnMap(userInput); //Display the selected city on the map
    };
 }
 
 // Execute a function when the user click on search button
-$("#submit-id").click(function(e){
-   // Cancel the default action, if needed
-   e.preventDefault();
-   userInput = $("#search-bar").val();
-   console.log('User Input Captured: ' + userInput);
-   getEventsToUI(''); // Display events
- });
+
+$(document).ready(function(){
+
+   loaderStatusCheck();
+
+   $("#submit-btn").click(function(e){
+      // Cancel the default action, if needed
+      e.preventDefault();
+      alert("#submit-btn was clicked.")
+      address = $("#search-bar").val();
+      console.log('User Input Captured: ' + address);
+      getEventsToUI(''); // Display events
+    });
+
+});
+
+ 
