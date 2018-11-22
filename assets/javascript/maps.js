@@ -44,11 +44,10 @@ function displayOnMap(cityName){
 
 //BLANK INITMAP function
 function initMap() {
-
 }
 
 //CALLBACK FUNCTION FOR THE GOOGLE MAPS API. THIS WILL ASK IF MAPS CAN ACCESS CURRENT LOCATION AND DISPLAY ON MAP
-function initMap1() {
+function initMap() {
 	$("#mapDisplay").css("display", "block");
 	var pos;
 	if(navigator.geolocation){

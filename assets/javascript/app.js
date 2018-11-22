@@ -1,4 +1,4 @@
-// ====== BackGround Change Using day light saving
+// ====== Background Changed Based on Time of Visit
 function dayAndNight(){
 
   var current = new Date();
