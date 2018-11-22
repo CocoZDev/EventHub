@@ -223,7 +223,8 @@ input {
   float: left;
   margin: 10px;
   width: 100%;
-  max-width: 150px;
+  max-height: 128px;
+  width: auto;
   height: auto;
 }
 
@@ -328,7 +329,6 @@ a:active {
 
   .event-image {
     float: none;
-    max-width: 230px;
     margin: auto;
   }
 

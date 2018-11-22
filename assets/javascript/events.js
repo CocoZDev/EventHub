@@ -2,7 +2,7 @@
 var eventType="";
 var address;
 var dateRange = "future";
-var noOfRecords = 20;
+var noOfRecords = 12;
 var showLoader = false;
 var pageNum = 1;
 
@@ -19,16 +19,18 @@ var event = {
    venue_name:"",
    venue_address:"",
    venue_url:"",
-   start_time:"",
+   start_time:""
 };
 
 //ARRAY OF EVENTS
 var events = [];
 
-// Check Loader Status
+// Check Loader Status to Add Loader and Hide Pager Buttons
 function loaderStatusCheck() {
    if (showLoader == true) {
       $("#loader").removeClass("hidden");
+      $("#next-events").addClass("hidden");
+      $("#previous-events").addClass("hidden");
    } else if (showLoader == false) {
       $("#loader").addClass("hidden");
    }
@@ -50,7 +52,7 @@ function queryEvents(eventType, address, noOfRecords, dateRange)
       image_sizes: "medium,perspectivecrop290by250",
       page_number: pageNum
    };
-   console.log("API query URL: http://api.eventful.com/json/events/search?q=music&app_key=Gp5KnQs4HTZ9gpPJ&location=Fullerton&date=future&page_size=120&page_number=1&within=50&sort_order=popularity&image_sizes=medium,perspectivecrop290by250");
+   console.log("API query URL: http://api.eventful.com/json/events/search?q=&app_key=Gp5KnQs4HTZ9gpPJ&location=Fullerton&date=future&page_size=12&page_number=1&within=50&sort_order=popularity&image_sizes=medium,perspectivecrop290by250");
 
    EVDB.API.call("json/events/search", oArgs, function(oData) {
       var cloneEvent;
@@ -155,8 +157,6 @@ $(document).ready(function(){
    $("#next-events").click(function(e){
    // Cancel the default action, if needed
    e.preventDefault();
-   $("#next-events").addClass("hidden");
-   $("#previous-events").addClass("hidden");
    $('html,body').animate({ scrollTop: $('#page-top-anchor').offset().top});
    pageNum ++;
    getEventsToUI(''); // Display events
@@ -165,8 +165,6 @@ $(document).ready(function(){
    $("#previous-events").click(function(e){
       // Cancel the default action, if needed
       e.preventDefault();
-      $("#next-events").addClass("hidden");
-      $("#previous-events").addClass("hidden");
       $('html,body').animate({ scrollTop: $('#page-top-anchor').offset().top});
       pageNum --;
       getEventsToUI(''); // Display events
