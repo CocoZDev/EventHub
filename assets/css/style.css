@@ -354,7 +354,7 @@ li {
   #mapDisplay {
     position: fixed !important;
     top: 330px;
-    right: 10px;
+    right: 40px;
     width: 150px;
     height: 150px !important;
     z-index: 100;
