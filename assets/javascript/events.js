@@ -83,9 +83,9 @@ function createEventDiv(event){
     var eventDIV = 
         `<div class="col-xs-12 col-md-6 event-item">
                <div class="event-details">
-                  <a href='${event.url}' target='_blank'>
+                  <div class="img-wrapper">
                      <img class='img-rounded img-responsive event-image' src='${event.imgSrc}'alt='event image'>
-                  </a>
+                  </div>
                   <h3 class='event-title'>${event.title}</h3>
                   <p>${event.start_time}
                      <br>${event.venue_address}, ${event.city}, ${event.region}

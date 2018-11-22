@@ -161,8 +161,12 @@ input {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .event-item {
@@ -212,7 +216,7 @@ input {
 .event-image {
   float: left;
   margin: 10px;
-  width:  100%;
+  width: 100%;
   max-width: 150px;
   height: auto;
 }
@@ -297,13 +301,9 @@ li {
 }
 
 @media (max-width: 1200px) {
-
   .event-image {
-    float: right
+    float: right;
   }
-}
-
-@media (max-width: 1085px) {
   .event-item {
     width: 95%;
   }
@@ -317,6 +317,7 @@ li {
 
   .event-image {
     float: none;
+    max-width: 230px;
     margin: auto;
   }
 
