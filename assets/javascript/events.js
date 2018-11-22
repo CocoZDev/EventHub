@@ -2,7 +2,7 @@
 var eventType="";
 var address;
 var dateRange = "future";
-var noOfRecords = 12;
+var noOfRecords = 20;
 var showLoader = false;
 var pageNum = 1;
 

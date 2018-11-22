@@ -238,6 +238,7 @@ a:hover,
 a:active {
   color: #00d4fa;
   text-decoration: underline;
+  text-underline-position: under;
 }
 
 /*div box styling which contains local weather , Travel sites, and events*/
@@ -364,6 +365,7 @@ a:active {
 }
 
 /* Pager */
+
 .pager .previous {
   margin-right: 25%;
 }
