@@ -2,7 +2,7 @@
 var eventType="";
 var address;
 var dateRange = "future";
-var noOfRecords = 50;
+var noOfRecords = 20;
 var showLoader = false;
 var pageNum = 1;
 
@@ -19,7 +19,7 @@ var event = {
    venue_name:"",
    venue_address:"",
    venue_url:"",
-   start_time:""
+   start_time:"",
 };
 
 //ARRAY OF EVENTS
@@ -58,8 +58,13 @@ function queryEvents(eventType, address, noOfRecords, dateRange)
 
          event.title = oData.events.event[i].title;
          event.url = oData.events.event[i].url;
-         if(oData.events.event[i].image.perspectivecrop290by250.url !== null){
+         if ((oData.events.event[i].image !== null) && (oData.events.event[i].image.perspectivecrop290by250 !== undefined))
+         {
             event.imgSrc = oData.events.event[i].image.perspectivecrop290by250.url;
+         } else if(oData.events.event[i].image == null){
+            event.imgSrc = "https://api.ballotpedia.org/v3/thumbnail/";
+         } else if(oData.events.event[i].image.perspectivecrop290by250 == undefined){
+            event.imgSrc = oData.events.event[i].image.medium.url;
          };
          event.city = oData.events.event[i].city_name;
          event.region = oData.events.event[i].region_name;
@@ -106,9 +111,10 @@ function createEventDiv(event){
 
 // Add More Event Button 
 function addMoreEventBtn() {
-      setTimeout(function() {
-         $("#more-events").removeClass("hidden");
-         }, 2000);
+      // setTimeout(function() {
+      $("#next-events").removeClass("hidden");
+      // }, 2000);
+      $("#previous-events").removeClass("hidden");
 };
 
 //TO DISPLAY THE SELECTED EVENT ADDRESS ON THE ADJACENT MAP
@@ -145,6 +151,26 @@ $(document).ready(function(){
       console.log('User Input Captured: ' + address);
       getEventsToUI(''); // Display events
     });
+
+   $("#next-events").click(function(e){
+   // Cancel the default action, if needed
+   e.preventDefault();
+   $("#next-events").addClass("hidden");
+   $("#previous-events").addClass("hidden");
+   $('html,body').animate({ scrollTop: $('#page-top-anchor').offset().top});
+   pageNum ++;
+   getEventsToUI(''); // Display events
+   });
+
+   $("#previous-events").click(function(e){
+      // Cancel the default action, if needed
+      e.preventDefault();
+      $("#next-events").addClass("hidden");
+      $("#previous-events").addClass("hidden");
+      $('html,body').animate({ scrollTop: $('#page-top-anchor').offset().top});
+      pageNum --;
+      getEventsToUI(''); // Display events
+   });
 
 });
 

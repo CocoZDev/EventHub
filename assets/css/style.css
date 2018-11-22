@@ -151,6 +151,8 @@ input {
 
 #more-events {
   margin-left: calc(50% - 52px);
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 /* Loading Animation  */
@@ -292,11 +294,11 @@ a:active {
   background: none;
 }
 
-ul {
+#search-menu ul {
   margin-left: -55px;
 }
 
-li {
+#search-menu li {
   display: inline-block;
   margin: 2px;
 }
@@ -359,6 +361,15 @@ li {
     height: 150px !important;
     z-index: 100;
   }
+}
+
+/* Pager */
+.pager .previous {
+  margin-right: 25%;
+}
+
+.pager .next {
+  margin-left: 25%;
 }
 
 /* End of New Search Area */

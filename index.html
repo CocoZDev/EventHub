@@ -99,9 +99,15 @@
 			<div class="container" id="event-container">
 				<div class="row" id="event-list">
 				</div>
-				<!-- More Events Button -->
-				<div class="row hidden" id="more-events">
-					<button class="btn btn-success">More Events</button>
+				
+				<!-- Pager -->
+				<div class="row">
+					<nav aria-label="...">
+						<div class="pager">
+							<button class="previous btn btn-success hidden" id="previous-events"><span aria-hidden="true">&larr; Previous Page</span></button>
+							<button class="next btn btn-success hidden" id="next-events"><span aria-hidden="true">Next Page &rarr;</span></button>
+						</div>
+					</nav>
 				</div>
 				<!-- Loading Animation -->
 				<div class="row hidden" id="loader"></div>
