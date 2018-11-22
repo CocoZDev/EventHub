@@ -2,8 +2,9 @@
 var eventType="";
 var address;
 var dateRange = "future";
-var noOfRecords = 120;
+var noOfRecords = 50;
 var showLoader = false;
+var pageNum = 1;
 
 //CREATE AN EVENT OBJECT TO CAPTURE THE  EVENT RELATED INFORMAION
 
@@ -31,7 +32,7 @@ function loaderStatusCheck() {
    } else if (showLoader == false) {
       $("#loader").addClass("hidden");
    }
-   alert("showLoader: " + showLoader);
+   // alert("showLoader: " + showLoader);
    console.log("showLoader: " + showLoader);
 };
 
@@ -46,7 +47,8 @@ function queryEvents(eventType, address, noOfRecords, dateRange)
       page_size: noOfRecords, //NO. OF RECORDS TO FETCH FROM THE QUERY
       sort_order: "popularity", //SORTING ORDER
       within: "50", // WITHIN HOW MANY MILES
-      image_sizes: "medium,perspectivecrop290by250"
+      image_sizes: "medium,perspectivecrop290by250",
+      page_number: pageNum
    };
    console.log("API query URL: http://api.eventful.com/json/events/search?q=music&app_key=Gp5KnQs4HTZ9gpPJ&location=Fullerton&date=future&page_size=120&page_number=1&within=50&sort_order=popularity&image_sizes=medium,perspectivecrop290by250");
 
@@ -70,13 +72,14 @@ function queryEvents(eventType, address, noOfRecords, dateRange)
          cloneEvent = Object.assign({}, event);
          events.push(cloneEvent);
          createEventDiv(cloneEvent);
-         console.log("Event #" + i + " displayed.");
-      }
+         console.log("Event #" + (i+1) + " displayed.");
+         showLoader = false;
+         loaderStatusCheck();
+         addMoreEventBtn();
+      };
 
-      // After loop is done, check loader status
-      showLoader = false;
-      loaderStatusCheck();
    });
+
 }
 
 function createEventDiv(event){
@@ -94,11 +97,19 @@ function createEventDiv(event){
                      <a class='link' href='${event.url}' target='_blank'>Event Details</a>
                   </p>
                </div>
-            </div>`;
+            </div>
+            `;
        
     var eventsHolder = $('#event-list');
     eventsHolder.append(eventDIV);
 }
+
+// Add More Event Button 
+function addMoreEventBtn() {
+      setTimeout(function() {
+         $("#more-events").removeClass("hidden");
+         }, 2000);
+};
 
 //TO DISPLAY THE SELECTED EVENT ADDRESS ON THE ADJACENT MAP
 function displayAddressOnMap(item){
@@ -130,7 +141,6 @@ $(document).ready(function(){
    $("#submit-btn").click(function(e){
       // Cancel the default action, if needed
       e.preventDefault();
-      alert("#submit-btn was clicked.")
       address = $("#search-bar").val();
       console.log('User Input Captured: ' + address);
       getEventsToUI(''); // Display events

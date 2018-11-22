@@ -53,7 +53,7 @@ body {
 }
 
 .navbar-fixed-top {
-  border-bottom: 2px solid #47ab15;
+  border-bottom: 2px solid green;
 }
 
 .nav-brand {
@@ -95,7 +95,7 @@ main {
   text-align: center;
   line-height: 1.2;
   font-weight: 300;
-  border-top: 2px solid #47ab15;
+  border-top: 2px solid green;
 }
 
 #footer p {
@@ -149,10 +149,14 @@ input {
   padding-bottom: 100px;
 }
 
+#more-events {
+  margin-left: calc(50% - 52px);
+}
+
 /* Loading Animation  */
 #loader {
   border: 10px solid black;
-  border-top: 10px solid #47ab15;
+  border-top: 10px solid green;
   border-radius: 50%;
   width: 80px;
   height: 80px;
@@ -265,8 +269,13 @@ a:active {
 }
 
 .btn-success {
+  background-color: green;
+}
+
+#search-menu .btn-success {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  background-color: #47ab15;
 }
 
 .button-group {
@@ -297,7 +306,7 @@ li {
   height: 200px !important;
   width: 100%;
   border-radius: 10px;
-  border: 3px solid #47ab15;
+  border: 3px solid green;
 }
 
 @media (max-width: 1200px) {
@@ -323,7 +332,7 @@ li {
 
   #search-menu {
     position: relative;
-    top: 94px;
+    top: 87px;
     width: 100%;
     height: auto;
   }
@@ -368,7 +377,7 @@ li {
   position: absolute;
   right: 15px;
   bottom: 115px;
-  background: #47ab15;
+  background: green;
   padding: 10px;
   text-align: center;
   margin: 0 0 0 0;
