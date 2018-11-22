@@ -44,21 +44,21 @@ function queryEvents(eventType, address, noOfRecords, dateRange)
       where: address, //THIS COULD BE CITY NAME OR ADDRESS
       "date": dateRange, //"2017080100-2017103000" or "THIS-MONTH" or "FUTURE"
       page_size: noOfRecords, //NO. OF RECORDS TO FETCH FROM THE QUERY
-      sort_order: "popularity", //SORTING RELEVANCE
+      sort_order: "popularity", //SORTING ORDER
       within: "50", // WITHIN HOW MANY MILES
+      image_sizes: "medium,perspectivecrop290by250"
    };
+   console.log("API query URL: http://api.eventful.com/json/events/search?q=music&app_key=Gp5KnQs4HTZ9gpPJ&location=Fullerton&date=future&page_size=120&page_number=1&within=50&sort_order=popularity&image_sizes=medium,perspectivecrop290by250");
 
-   EVDB.API.call("/events/search", oArgs, function(oData) {
+   EVDB.API.call("json/events/search", oArgs, function(oData) {
       var cloneEvent;
       for (var i=0; i<oData.events.event.length; i++){
 
          event.title = oData.events.event[i].title;
          event.url = oData.events.event[i].url;
-         // if(oData.events.event[i].image.medium.url == null){
-         //    event.imgSrc = "../images/no-image-available.png";
-         // } else {
-            event.imgSrc = oData.events.event[i].image.medium.url;
-         // };
+         if(oData.events.event[i].image.perspectivecrop290by250.url !== null){
+            event.imgSrc = oData.events.event[i].image.perspectivecrop290by250.url;
+         };
          event.city = oData.events.event[i].city_name;
          event.region = oData.events.event[i].region_name;
          event.country = oData.events.event[i].country_name;
@@ -70,6 +70,7 @@ function queryEvents(eventType, address, noOfRecords, dateRange)
          cloneEvent = Object.assign({}, event);
          events.push(cloneEvent);
          createEventDiv(cloneEvent);
+         console.log("Event #" + i + " displayed.");
       }
 
       // After loop is done, check loader status
