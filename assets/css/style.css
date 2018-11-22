@@ -375,26 +375,25 @@ li {
 
 .scroll-btn {
   position: absolute;
-  right: 15px;
-  bottom: 115px;
+  right: 40px;
+  bottom: 98px;
   background: green;
   padding: 10px;
   text-align: center;
   margin: 0 0 0 0;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 5px 5px 0 0;
   /* border: 1.5px solid black; */
-  box-shadow: 2px 2px 5px black;
+  /* box-shadow: 2px 2px 5px black; */
 }
 
 .scroll-btn .fa-angle-up {
   color: white;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 980px) {
   .scroll-btn {
-    bottom: 150px;
-    right: 10px;
+    bottom: 115px;
   }
 }
 
