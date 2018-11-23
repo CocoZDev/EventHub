@@ -242,7 +242,7 @@ a:active {
   font-weight: 500;
   background-color: rgba(0, 37, 107, 0.9);
   /* border: 2px solid #00d4fa; */
-  height: calc(100% - 100px);
+  height: calc(100% - 62px);
   font-size: 1.2em;
   text-align: left;
   font-family: Montserrat, Tahoma, Arial, sans-serif;
@@ -327,6 +327,10 @@ a:active {
     top: 87px;
     width: 100%;
     height: auto;
+  }
+
+  #search-menu .filter-events .search-heading {
+    margin-top: -3px;
   }
 
   #event-container {
