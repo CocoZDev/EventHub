@@ -349,10 +349,10 @@ a:active {
 
   #mapDisplay {
     position: fixed !important;
-    top: 330px;
-    right: 40px;
-    width: 150px;
-    height: 150px !important;
+    bottom: 110px;
+    right: 15px;
+    width: 120px;
+    height: 180px !important;
     z-index: 100;
   }
 }
