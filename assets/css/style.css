@@ -265,18 +265,26 @@ a:active {
   outline: none;
 }
 
-.btn-success:hover {
-  background-color: darkgreen;
-}
-
+.btn-success:hover,
+.btn-success:active,
 .btn-success:focus {
+  background-color: darkgreen;
   outline: none;
 }
 
-#search-menu .btn-success {
+form .btn-success {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
+
+form .btn-success:hover {
+  background-color: darkgreen;
+} 
+
+form .btn-success:active,
+form .btn-success:focus {
+  background-color: green;
+} 
 
 .button-group {
   margin-left: 10px;
