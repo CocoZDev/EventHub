@@ -113,20 +113,6 @@ main {
   margin-bottom: 10px !important;
 }
 
-/* @media (max-width: 992px) {
-  .eventful-badge {
-    padding-bottom: 15px !important;
-  }
-
-  #footer {
-    text-align: left;
-    height: auto !important;
-  }
-  .footer-right {
-    border: none;
-  }
-} */
-
 /* End of Heading and Footer */
 
 input {
@@ -391,8 +377,8 @@ a:active {
 
 .scroll-btn {
   position: absolute;
-  right: 40px;
-  bottom: 98px;
+  right: 15px;
+  bottom: 30px;
   background: green;
   padding: 10px;
   text-align: center;
@@ -405,12 +391,6 @@ a:active {
 
 .scroll-btn .fa-angle-up {
   color: white;
-}
-
-@media (max-width: 980px) {
-  .scroll-btn {
-    bottom: 115px;
-  }
 }
 
 .scroll-btn:hover {
