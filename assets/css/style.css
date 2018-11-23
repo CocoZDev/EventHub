@@ -94,7 +94,6 @@ main {
   margin: 0px 5px;
 }
 
-
 /* Eventful Logo */
 
 .eventful-badge,
@@ -343,16 +342,39 @@ a:active {
   }
 
   #event-list {
-    width: 63%;
+    width: 100%;
     margin-left: 0;
+  }
+
+  .event-item {
+    width: 40%;
+    min-height: 404px;
   }
 
   #mapDisplay {
     position: fixed !important;
-    bottom: 110px;
+    top: 310px;
     right: 15px;
-    width: 120px;
-    height: 180px !important;
+    width: 100px;
+    height: 150px !important;
+    z-index: 100;
+  }
+}
+
+@media (max-width: 630px) {
+  .event-item {
+    width: 90%;
+    margin-left: 5%;
+    min-height: 0;
+    height: auto;
+  }
+
+  #mapDisplay {
+    position: fixed !important;
+    top: 345px;
+    right: 15px;
+    width: 100px;
+    height: 150px !important;
     z-index: 100;
   }
 }
