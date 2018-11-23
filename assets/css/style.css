@@ -262,12 +262,20 @@ a:active {
 
 .btn-success {
   background-color: green;
+  outline: none;
+}
+
+.btn-success:hover {
+  background-color: darkgreen;
+}
+
+.btn-success:focus {
+  outline: none;
 }
 
 #search-menu .btn-success {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-  background-color: #47ab15;
 }
 
 .button-group {
@@ -381,12 +389,22 @@ a:active {
 
 /* Pager */
 
-.pager .previous {
-  margin-right: 25%;
+.pager {
+  width: 80%;
+  margin-left: 10%;
 }
 
-.pager .next {
-  margin-left: 25%;
+ul.pager li span {
+  background-color: green;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+}
+
+.pager li span:hover {
+  cursor: pointer;
+  background-color: darkgreen;
 }
 
 /* End of New Search Area */
