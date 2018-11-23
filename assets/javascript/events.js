@@ -31,9 +31,13 @@ function loaderStatusCheck() {
       $("#loader").removeClass("hidden");
       $("#next-events").addClass("hidden");
       $("#previous-events").addClass("hidden");
-   } else if (showLoader == false) {
+   } else if (showLoader == false && pageNum == 1) {
       $("#loader").addClass("hidden");
-   }
+      $("#previous-events").addClass("hidden");
+   } else if (showLoader == false && pageNum !== 1) {
+      $("#loader").addClass("hidden");
+      $("#previous-events").removeClass("hidden");
+   };
    // alert("showLoader: " + showLoader);
    console.log("showLoader: " + showLoader);
 };
@@ -82,7 +86,7 @@ function queryEvents(eventType, address, noOfRecords, dateRange)
          console.log("Event #" + (i+1) + " displayed.");
          showLoader = false;
          loaderStatusCheck();
-         addMoreEventBtn();
+         $("#next-events").removeClass("hidden");
       };
 
    });
@@ -110,14 +114,6 @@ function createEventDiv(event){
     var eventsHolder = $('#event-list');
     eventsHolder.append(eventDIV);
 }
-
-// Add More Event Button 
-function addMoreEventBtn() {
-      // setTimeout(function() {
-      $("#next-events").removeClass("hidden");
-      // }, 2000);
-      $("#previous-events").removeClass("hidden");
-};
 
 //TO DISPLAY THE SELECTED EVENT ADDRESS ON THE ADJACENT MAP
 function displayAddressOnMap(item){

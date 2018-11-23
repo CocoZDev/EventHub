@@ -405,7 +405,7 @@ form .btn-success:focus {
 ul.pager li span {
   background-color: green;
   color: white;
-  font-size: 16px;
+  font-size: 15px;
   border-radius: 5px;
   border: none;
 }
