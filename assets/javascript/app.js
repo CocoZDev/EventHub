@@ -1,22 +1,22 @@
 // ====== Background Changed Based on Time of Visit
-function dayAndNight(){
+// function dayAndNight(){
 
-  var current = new Date();
-  var day_night = current.getHours();
-  // console.log(current);
-  // console.log(day_night);
+//   var current = new Date();
+//   var day_night = current.getHours();
+//   // console.log(current);
+//   // console.log(day_night);
 
-    if (day_night > 0 && day_night < 16){
-      //Day
-      document.body.style.backgroundImage = "url('assets/images/audience-1835431_1920_blue.jpg')";
-    }
-    else{
-      //Night
-      document.body.style.backgroundImage = "url('assets/images/artist-1838653_1920_blue.jpg')";
-    }
-}
+//     if (day_night > 0 && day_night < 16){
+//       //Day
+//       document.body.style.backgroundImage = "url('assets/images/audience-1835431_1920_blue.jpg')";
+//     }
+//     else{
+//       //Night
+//       document.body.style.backgroundImage = "url('assets/images/artist-1838653_1920_blue.jpg')";
+//     }
+// }
 
-dayAndNight();//======background change end code
+// dayAndNight();//======background change end code
 
 // ========== Smooth Scroll To Top Button - https://codepen.io/kruxor/pen/CwpFq ========== //
 
