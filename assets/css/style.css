@@ -380,8 +380,8 @@ form .btn-success:focus {
 
   #mapDisplay {
     position: fixed !important;
-    top: 310px;
-    right: 15px;
+    top: 367px;
+    right: 5px;
     width: 100px;
     height: 150px !important;
     z-index: 100;
@@ -396,14 +396,6 @@ form .btn-success:focus {
     height: auto;
   }
 
-  #mapDisplay {
-    position: fixed !important;
-    top: 345px;
-    right: 15px;
-    width: 100px;
-    height: 150px !important;
-    z-index: 100;
-  }
 }
 
 /* Pager */
