@@ -1,5 +1,5 @@
 // Default API Setting
-var eventType="";
+var eventType;
 var address;
 var dateRange = "future";
 var noOfRecords = 20;
@@ -56,7 +56,7 @@ function queryEvents(eventType, address, noOfRecords, dateRange)
       image_sizes: "medium,perspectivecrop290by250",
       page_number: pageNum
    };
-   console.log("API query URL example: http://api.eventful.com/json/events/search?category=music&app_key=Gp5KnQs4HTZ9gpPJ&location=Fullerton&date=future&page_size=12&page_number=1&within=50&sort_order=popularity&image_sizes=medium,perspectivecrop290by250&include=categories");
+   // console.log("API query URL example: http://api.eventful.com/json/events/search?category=music&app_key=Gp5KnQs4HTZ9gpPJ&location=Fullerton&date=future&page_size=12&page_number=1&within=50&sort_order=popularity&image_sizes=medium,perspectivecrop290by250&include=categories");
 
    console.log(`Current API query URL: http://api.eventful.com/json/events/search?category=${oArgs.category}&app_key=${oArgs.app_key}&location=${address}&date=${dateRange}&page_size=${noOfRecords}&page_number=${pageNum}&within=${oArgs.within}&sort_order=${oArgs.sort_order}&image_sizes=${oArgs.image_sizes}&include=categories`);
 
@@ -85,7 +85,7 @@ function queryEvents(eventType, address, noOfRecords, dateRange)
          cloneEvent = Object.assign({}, event);
          events.push(cloneEvent);
          createEventDiv(cloneEvent);
-         console.log("Event #" + (i+1) + " displayed.");
+         // console.log("Event #" + (i+1) + " displayed.");
          showLoader = false;
          loaderStatusCheck();
          $("#next-events").removeClass("hidden");

@@ -7,7 +7,7 @@ function displayOnMap(cityName){
 			lng: 0
 		};
 		map = new google.maps.Map(document.getElementById('mapDisplay'),{
-			zoom: 12,
+			zoom: 10,
 			center: pos
 		});
 	};
@@ -57,7 +57,7 @@ function initMap() {
 				lng: position.coords.longitude
 			};
 			map = new google.maps.Map(document.getElementById('mapDisplay'),{
-				zoom: 12,
+				zoom: 10,
 				center: pos
 			});
 			marker = new google.maps.Marker({
