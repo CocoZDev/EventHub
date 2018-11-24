@@ -7,7 +7,7 @@ function displayOnMap(cityName){
 			lng: 0
 		};
 		map = new google.maps.Map(document.getElementById('mapDisplay'),{
-			zoom: 15,
+			zoom: 12,
 			center: pos
 		});
 	};
@@ -57,7 +57,7 @@ function initMap() {
 				lng: position.coords.longitude
 			};
 			map = new google.maps.Map(document.getElementById('mapDisplay'),{
-				zoom: 15,
+				zoom: 12,
 				center: pos
 			});
 			marker = new google.maps.Marker({
@@ -67,32 +67,32 @@ function initMap() {
 				icon: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png'
 			});
 
-			var options = {
-				'default':'',
-				'restaurant':'Restaurants',
-				'atm':'ATM',
-				'hospital':'Hospitals',
-				'pharmacy': 'Pharmacy',
-				'gas-station':'Gas Stations',
-				'parking': 'Parking'};
-			var searchNearBy = document.createElement("SELECT");
-			searchNearBy.id = "searchNearBy";
-			searchNearBy.onchange = function(){
-				//console.log(this.value);
-				fnSearchNearBy(this.value, pos);
-			};
-			var keys = Object.keys(options);
+			// var options = {
+			// 	'default':'',
+			// 	'restaurant':'Restaurants',
+			// 	'atm':'ATM',
+			// 	'hospital':'Hospitals',
+			// 	'pharmacy': 'Pharmacy',
+			// 	'gas-station':'Gas Stations',
+			// 	'parking': 'Parking'};
+			// var searchNearBy = document.createElement("SELECT");
+			// searchNearBy.id = "searchNearBy";
+			// searchNearBy.onchange = function(){
+			// 	//console.log(this.value);
+			// 	fnSearchNearBy(this.value, pos);
+			// };
+			// var keys = Object.keys(options);
 
-			for (var i=0; i<keys.length; i++){
-				var option = document.createElement("OPTION");
-				var key = keys[i];
+			// for (var i=0; i<keys.length; i++){
+			// 	var option = document.createElement("OPTION");
+			// 	var key = keys[i];
 
-				option.value = key;
-				option.innerHTML = options[key];
-				searchNearBy.appendChild(option);
-			}
+			// 	option.value = key;
+			// 	option.innerHTML = options[key];
+			// 	searchNearBy.appendChild(option);
+			// }
 
-			map.controls[google.maps.ControlPosition.TOP_RIGHT].push(searchNearBy);
+			// map.controls[google.maps.ControlPosition.TOP_RIGHT].push(searchNearBy);
 		});
 	}
 }

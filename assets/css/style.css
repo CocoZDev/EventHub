@@ -41,11 +41,11 @@ body {
 }
 
 .navbar-fixed-top {
-  border-bottom: 2px solid #01ac01;
+  border-bottom: 1px solid #01ac01;
 }
 
 .nav-brand {
-  color: #47ab15;
+  color: #01ac01;
   font-weight: 600;
 }
 
@@ -78,7 +78,7 @@ main {
   text-align: center;
   line-height: 1.2;
   font-weight: 300;
-  border-top: 2px solid #01ac01;
+  border-top: 1px solid #01ac01;
 }
 
 #footer p {
