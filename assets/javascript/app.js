@@ -8,11 +8,11 @@ function dayAndNight(){
 
     if (day_night > 0 && day_night < 16){
       //Day
-      document.body.style.backgroundImage = "url('assets/images/kyle-hinkson-498968-unsplash-2.jpg')";
+      document.body.style.backgroundImage = "url('assets/images/audience-1835431_1920_blue.jpg')";
     }
     else{
       //Night
-      document.body.style.backgroundImage = "url('assets/images/artist-1838653_1920.jpg')";
+      document.body.style.backgroundImage = "url('assets/images/artist-1838653_1920_blue.jpg')";
     }
 }
 

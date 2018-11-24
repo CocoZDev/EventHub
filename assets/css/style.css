@@ -41,7 +41,7 @@ body {
 }
 
 .navbar-fixed-top {
-  border-bottom: 2px solid green;
+  border-bottom: 2px solid #01ac01;
 }
 
 .nav-brand {
@@ -78,7 +78,7 @@ main {
   text-align: center;
   line-height: 1.2;
   font-weight: 300;
-  border-top: 2px solid green;
+  border-top: 2px solid #01ac01;
 }
 
 #footer p {
@@ -145,11 +145,11 @@ input {
 
 /* Loading Animation  */
 #loader {
-  border: 10px solid black;
-  border-top: 10px solid green;
+  /* border: 10px solid white; */
+  border-top: 10px solid #01ac01;
   border-radius: 50%;
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   animation: spin 1s linear infinite;
   margin: 250px auto;
 }
@@ -167,7 +167,7 @@ input {
   color: white;
   display: block;
   line-height: 1.4em;
-  border: 2px solid white;
+  border: 1.5px solid #0d9ee4;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.9);
   margin-top: 15px;
@@ -239,7 +239,7 @@ a:active {
   top: 62px;
   color: #fff;
   font-weight: 500;
-  background-color: rgba(0, 37, 107, 0.9);
+  background-color: rgba(0, 0, 0, 0.8);
   /* border: 2px solid #00d4fa; */
   height: calc(100% - 62px);
   font-size: 1.2em;
@@ -261,14 +261,14 @@ a:active {
 }
 
 .btn-success {
-  background-color: green;
+  background-color: #01ac01;
   outline: none;
 }
 
 .btn-success:hover,
 .btn-success:active,
 .btn-success:focus {
-  background-color: darkgreen;
+  background-color: green;
   outline: none;
 }
 
@@ -278,12 +278,12 @@ form .btn-success {
 }
 
 form .btn-success:hover {
-  background-color: darkgreen;
+  background-color: green;
 } 
 
 form .btn-success:active,
 form .btn-success:focus {
-  background-color: green;
+  background-color: #01ac01;
 } 
 
 .button-group {
@@ -313,12 +313,12 @@ form .btn-success:focus {
   margin-top: 15px;
   height: 200px !important;
   width: 100%;
-  border-radius: 10px;
-  border: 3px solid green;
+  border-radius: 8px;
+  border: 2.5px solid #01ac01;
 }
 
 #searchNearBy {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.8);
   color: white;
 }
 
@@ -417,7 +417,7 @@ ul.pager li span {
 
 .pager li span:hover {
   cursor: pointer;
-  background-color: darkgreen;
+  background-color: #016601;
 }
 
 /* End of New Search Area */
@@ -436,7 +436,7 @@ ul.pager li span {
   position: absolute;
   right: 15px;
   bottom: 30px;
-  background: green;
+  background: #01ac01;
   padding: 10px;
   text-align: center;
   margin: 0 0 0 0;
