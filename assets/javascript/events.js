@@ -39,7 +39,7 @@ function loaderStatusCheck() {
       $("#previous-events").removeClass("hidden");
    };
    // alert("showLoader: " + showLoader);
-   console.log("showLoader: " + showLoader);
+   // console.log("showLoader: " + showLoader);
 };
 
 // FUNCTION TO DISPLAY EVENTS FOR A GIVEN CITY NAME
@@ -47,7 +47,7 @@ function queryEvents(eventType, address, noOfRecords, dateRange)
 {
    var oArgs = {
       app_key: "Gp5KnQs4HTZ9gpPJ", //APP KEY FOR USING "EVENTFUL" API
-      q: eventType, //SEARCH ON THE TYPE OF EVENT e.g, MUSIC, FAMILY, BUSINESS
+      category: eventType, //SEARCH ON THE TYPE OF EVENT e.g, MUSIC, FAMILY, BUSINESS
       where: address, //THIS COULD BE CITY NAME OR ADDRESS
       "date": dateRange, //"2017080100-2017103000" or "THIS-MONTH" or "FUTURE"
       page_size: noOfRecords, //NO. OF RECORDS TO FETCH FROM THE QUERY
@@ -56,7 +56,9 @@ function queryEvents(eventType, address, noOfRecords, dateRange)
       image_sizes: "medium,perspectivecrop290by250",
       page_number: pageNum
    };
-   console.log("API query URL: http://api.eventful.com/json/events/search?q=&app_key=Gp5KnQs4HTZ9gpPJ&location=Fullerton&date=future&page_size=12&page_number=1&within=50&sort_order=popularity&image_sizes=medium,perspectivecrop290by250");
+   console.log("API query URL example: http://api.eventful.com/json/events/search?category=music&app_key=Gp5KnQs4HTZ9gpPJ&location=Fullerton&date=future&page_size=12&page_number=1&within=50&sort_order=popularity&image_sizes=medium,perspectivecrop290by250&include=categories");
+
+   console.log(`Current API query URL: http://api.eventful.com/json/events/search?category=${oArgs.category}&app_key=${oArgs.app_key}&location=${address}&date=${dateRange}&page_size=${noOfRecords}&page_number=${pageNum}&within=${oArgs.within}&sort_order=${oArgs.sort_order}&image_sizes=${oArgs.image_sizes}&include=categories`);
 
    EVDB.API.call("json/events/search", oArgs, function(oData) {
       var cloneEvent;

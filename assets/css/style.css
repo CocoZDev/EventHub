@@ -272,6 +272,15 @@ a:active {
   outline: none;
 }
 
+.category-group {
+  margin-left: 10px;
+}
+
+.category-group .btn-success {
+  padding: 3px 12px;
+  margin-bottom: 2px;
+}
+
 form .btn-success {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -286,9 +295,6 @@ form .btn-success:focus {
   background-color: #01ac01;
 } 
 
-.button-group {
-  margin-left: 10px;
-}
 
 #search-menu .search-heading {
   margin-top: 20px;
