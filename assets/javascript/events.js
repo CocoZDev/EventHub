@@ -135,6 +135,7 @@ function getEventsToUI(eventType){
       loaderStatusCheck();
        $("#mapDisplay").removeClass("hidden");
        displayOnMap(address); //Display the selected city on the map
+       $('html,body').animate({ scrollTop: $('#page-top-anchor').offset().top});
        queryEvents(eventType, address, noOfRecords, dateRange);
    };
 }
@@ -164,7 +165,6 @@ $(document).ready(function(){
    $("#next-events").click(function(e){
    // Cancel the default action, if needed
    e.preventDefault();
-   $('html,body').animate({ scrollTop: $('#page-top-anchor').offset().top});
    pageNum ++;
    getEventsToUI(eventType); // Display events
    });
@@ -172,7 +172,6 @@ $(document).ready(function(){
    $("#previous-events").click(function(e){
       // Cancel the default action, if needed
       e.preventDefault();
-      $('html,body').animate({ scrollTop: $('#page-top-anchor').offset().top});
       pageNum --;
       getEventsToUI(eventType); // Display events
    });
