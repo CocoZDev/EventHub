@@ -1,22 +1,16 @@
 # Event Hub
 
-This group project is a location-based event search engine. It will also show users the local time, weather, event location map, and link to purchase tickets for users to easily plan and attend events of their interests.
+Event Hub is a mobile-friendly location-based event search engine web app. It uses Eventful API and Google APIs to autocomplete users' location input, display maps, and search events by category.
 
-I was responsible for researching and implementing the event API and also assisted in the front end development.
+My responsibilities are UI/UX Design and Development as well as Eventful API integration.
 
-Technologies Used: Bootstrap, APIs, HTML, CSS, Javascript, jQuery, Moment.js, and Photoshop
+# Technologies Used
 
-# API Used
-
-- Eventful API: to query event details based on search parameters
-- OpenWeatherMaps API: to display weather information
-- Google Maps API: for maps and directions
-- TimeZoneDB API: to display time
-
+Bootstrap 3, Eventful API, Google APIs, HTML, CSS, Javascript, and jQuery.
 
 # Live Demo
 
-This functional application can be accessed on Heroku at https://event-hub-api.herokuapp.com/.
+View this web app at https://event-hub-api.herokuapp.com/.
 
 # Team
 
