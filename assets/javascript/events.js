@@ -156,7 +156,7 @@ $(document).ready(function(){
     $(".category").click(function(e){
       // Cancel the default action, if needed
       e.preventDefault();
-      eventType = $(this).attr('data-id');
+      eventType = $(this).attr("data-id");
       pageNum=1;
       getEventsToUI(eventType); // Display events
     });
