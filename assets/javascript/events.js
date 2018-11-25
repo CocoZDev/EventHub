@@ -56,9 +56,9 @@ function queryEvents(eventType, address, noOfRecords, dateRange)
       image_sizes: "medium,perspectivecrop290by250",
       page_number: pageNum
    };
-   // console.log("API query URL example: http://api.eventful.com/json/events/search?category=music&app_key=Gp5KnQs4HTZ9gpPJ&location=Fullerton&date=future&page_size=12&page_number=1&within=50&sort_order=popularity&image_sizes=medium,perspectivecrop290by250&include=categories");
+   // console.log("API query URL example: http://api.eventful.com/json/events/search?category=music&page_number=1&app_key=Gp5KnQs4HTZ9gpPJ&location=Fullerton&date=future&page_size=12&within=50&sort_order=popularity&image_sizes=medium,perspectivecrop290by250&include=categories");
 
-   console.log(`Current API query URL: http://api.eventful.com/json/events/search?category=${oArgs.category}&app_key=${oArgs.app_key}&location=${address}&date=${dateRange}&page_size=${noOfRecords}&page_number=${pageNum}&within=${oArgs.within}&sort_order=${oArgs.sort_order}&image_sizes=${oArgs.image_sizes}&include=categories`);
+   console.log(`Current API query URL: http://api.eventful.com/json/events/search?category=${oArgs.category}&page_number=${pageNum}&app_key=${oArgs.app_key}&location=${address}&date=${dateRange}&page_size=${noOfRecords}&within=${oArgs.within}&sort_order=${oArgs.sort_order}&image_sizes=${oArgs.image_sizes}&include=categories`);
 
    EVDB.API.call("json/events/search", oArgs, function(oData) {
       var cloneEvent;
@@ -130,6 +130,7 @@ function getEventsToUI(eventType){
    if((address == null) || (address == "")) {
       alert("Please provide City Name or Zip Code to search events.")
    } else {
+      console.log('User Input Captured: ' + address);
       showLoader = true;
       loaderStatusCheck();
        $("#mapDisplay").removeClass("hidden");
@@ -146,10 +147,18 @@ $(document).ready(function(){
 
    $("#submit-btn").click(function(e){
       // Cancel the default action, if needed
+      e.preventDefault();    
+      pageNum=1;
+      eventType="";
+      getEventsToUI(eventType); // Display events
+    });
+
+    $(".category").click(function(e){
+      // Cancel the default action, if needed
       e.preventDefault();
-      address = $("#search-bar").val();
-      console.log('User Input Captured: ' + address);
-      getEventsToUI(''); // Display events
+      eventType = $(this).attr('data-id');
+      pageNum=1;
+      getEventsToUI(eventType); // Display events
     });
 
    $("#next-events").click(function(e){
@@ -157,7 +166,7 @@ $(document).ready(function(){
    e.preventDefault();
    $('html,body').animate({ scrollTop: $('#page-top-anchor').offset().top});
    pageNum ++;
-   getEventsToUI(''); // Display events
+   getEventsToUI(eventType); // Display events
    });
 
    $("#previous-events").click(function(e){
@@ -165,7 +174,7 @@ $(document).ready(function(){
       e.preventDefault();
       $('html,body').animate({ scrollTop: $('#page-top-anchor').offset().top});
       pageNum --;
-      getEventsToUI(''); // Display events
+      getEventsToUI(eventType); // Display events
    });
 
 });
