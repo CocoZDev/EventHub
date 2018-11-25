@@ -265,11 +265,13 @@ a:active {
   outline: none;
 }
 
+.btn-success:visited,
 .btn-success:hover,
 .btn-success:active,
 .btn-success:focus {
   background-color: green;
   outline: none;
+  border: 1px solid white;
 }
 
 .category-group {
